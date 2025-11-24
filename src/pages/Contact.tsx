@@ -1,0 +1,238 @@
+import { useState } from "react";
+import { MessageCircle, Mail, Calendar } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { useToast } from "@/hooks/use-toast";
+
+export default function Contact() {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    business: "",
+    website: "",
+    requirement: "",
+    budget: "",
+  });
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    // Simulate form submission
+    setTimeout(() => {
+      toast({
+        title: "Message sent!",
+        description: "Thank you for reaching out. I'll get back to you within 24 hours.",
+      });
+      setIsSubmitting(false);
+      setFormData({
+        name: "",
+        business: "",
+        website: "",
+        requirement: "",
+        budget: "",
+      });
+    }, 1000);
+  };
+
+  const handleChange = (field: string, value: string) => {
+    setFormData((prev) => ({ ...prev, [field]: value }));
+  };
+
+  return (
+    <div className="min-h-screen py-20">
+      <div className="container mx-auto px-6">
+        {/* Header */}
+        <div className="text-center mb-16 animate-fade-up">
+          <h1 className="font-sora font-bold text-text mb-4">
+            Ready to get your business online the right way?
+          </h1>
+          <p className="text-muted max-w-2xl mx-auto text-lg">
+            Fill out the form below or reach out directly via WhatsApp or email
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          {/* Form */}
+          <Card className="p-8 bg-surface border border-border shadow-card animate-fade-up">
+            <h2 className="font-sora font-semibold text-xl mb-6">Send a message</h2>
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div>
+                <Label htmlFor="name">Name *</Label>
+                <Input
+                  id="name"
+                  type="text"
+                  required
+                  value={formData.name}
+                  onChange={(e) => handleChange("name", e.target.value)}
+                  className="mt-2"
+                  placeholder="Your full name"
+                />
+              </div>
+
+              <div>
+                <Label htmlFor="business">Business / Organization</Label>
+                <Input
+                  id="business"
+                  type="text"
+                  value={formData.business}
+                  onChange={(e) => handleChange("business", e.target.value)}
+                  className="mt-2"
+                  placeholder="Your business name"
+                />
+              </div>
+
+              <div>
+                <Label htmlFor="website">Current Website (if any)</Label>
+                <Input
+                  id="website"
+                  type="url"
+                  value={formData.website}
+                  onChange={(e) => handleChange("website", e.target.value)}
+                  className="mt-2"
+                  placeholder="https://example.com"
+                />
+              </div>
+
+              <div>
+                <Label htmlFor="requirement">Brief Requirement *</Label>
+                <Textarea
+                  id="requirement"
+                  required
+                  value={formData.requirement}
+                  onChange={(e) => handleChange("requirement", e.target.value)}
+                  className="mt-2 min-h-[120px]"
+                  placeholder="Tell me about your project..."
+                />
+              </div>
+
+              <div>
+                <Label htmlFor="budget">Budget Bracket</Label>
+                <Select value={formData.budget} onValueChange={(value) => handleChange("budget", value)}>
+                  <SelectTrigger className="mt-2">
+                    <SelectValue placeholder="Select your budget range" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="basic">₹35k - ₹45k (Basic)</SelectItem>
+                    <SelectItem value="premium">₹50k - ₹65k (Premium)</SelectItem>
+                    <SelectItem value="custom">₹80k - ₹1.2L (Custom)</SelectItem>
+                    <SelectItem value="flexible">Flexible</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+
+              <Button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full bg-accent hover:bg-accent/90 text-accent-cta-text font-medium transition-all duration-200 hover:-translate-y-1 shadow-card hover:shadow-card-hover"
+              >
+                {isSubmitting ? "Sending..." : "Send message"}
+              </Button>
+            </form>
+          </Card>
+
+          {/* Contact Options */}
+          <div className="space-y-6 animate-fade-up" style={{ animationDelay: "150ms" }}>
+            <Card className="p-6 bg-surface border border-border shadow-card hover:shadow-card-hover transition-all duration-300">
+              <div className="flex items-start gap-4">
+                <div className="p-3 bg-accent/10 rounded-lg">
+                  <MessageCircle className="h-6 w-6 text-accent" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="font-sora font-semibold mb-2">WhatsApp (Preferred)</h3>
+                  <p className="text-muted text-sm mb-4">
+                    Quick responses and easy communication. Best for initial discussions.
+                  </p>
+                  <a
+                    href="https://wa.me/919999999999"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button
+                      variant="outline"
+                      className="border-border hover:border-accent hover:text-accent transition-all duration-200"
+                    >
+                      Chat on WhatsApp
+                    </Button>
+                  </a>
+                </div>
+              </div>
+            </Card>
+
+            <Card className="p-6 bg-surface border border-border shadow-card hover:shadow-card-hover transition-all duration-300">
+              <div className="flex items-start gap-4">
+                <div className="p-3 bg-accent-2/10 rounded-lg">
+                  <Mail className="h-6 w-6 text-accent-2" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="font-sora font-semibold mb-2">Email</h3>
+                  <p className="text-muted text-sm mb-4">
+                    For detailed project briefs and formal communication.
+                  </p>
+                  <a href="mailto:hello@pankaj.dev">
+                    <Button
+                      variant="outline"
+                      className="border-border hover:border-accent hover:text-accent transition-all duration-200"
+                    >
+                      Send email
+                    </Button>
+                  </a>
+                </div>
+              </div>
+            </Card>
+
+            <Card className="p-6 bg-surface border border-border shadow-card hover:shadow-card-hover transition-all duration-300">
+              <div className="flex items-start gap-4">
+                <div className="p-3 bg-accent/10 rounded-lg">
+                  <Calendar className="h-6 w-6 text-accent" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="font-sora font-semibold mb-2">Schedule a Call</h3>
+                  <p className="text-muted text-sm mb-4">
+                    Book a 15-minute discovery call to discuss your project in detail.
+                  </p>
+                  <Button
+                    variant="outline"
+                    className="border-border hover:border-accent hover:text-accent transition-all duration-200"
+                  >
+                    Book 15min call
+                  </Button>
+                </div>
+              </div>
+            </Card>
+
+            {/* Payment Info */}
+            <Card className="p-6 bg-gradient-to-br from-accent/10 to-accent-2/10 border border-border">
+              <h3 className="font-sora font-semibold mb-3">Payment Information</h3>
+              <ul className="space-y-2 text-sm text-muted">
+                <li className="flex items-start gap-2">
+                  <span className="text-accent mt-0.5">•</span>
+                  <span>50% advance to start, 50% before handover</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-accent mt-0.5">•</span>
+                  <span>UPI / GPay / Bank transfer accepted</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-accent mt-0.5">•</span>
+                  <span>Invoice provided post-payment</span>
+                </li>
+              </ul>
+            </Card>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

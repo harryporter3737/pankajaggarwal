@@ -3,10 +3,26 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
+import { Header } from "./components/Header";
+import { Footer } from "./components/Footer";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Services from "./pages/Services";
+import Portfolio from "./pages/Portfolio";
+import Pricing from "./pages/Pricing";
+import Process from "./pages/Process";
+import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
+
+const Layout = ({ children }: { children: React.ReactNode }) => (
+  <>
+    <Header />
+    <main>{children}</main>
+    <Footer />
+  </>
+);
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -15,8 +31,13 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="/" element={<Layout><Home /></Layout>} />
+          <Route path="/about" element={<Layout><About /></Layout>} />
+          <Route path="/services" element={<Layout><Services /></Layout>} />
+          <Route path="/portfolio" element={<Layout><Portfolio /></Layout>} />
+          <Route path="/pricing" element={<Layout><Pricing /></Layout>} />
+          <Route path="/process" element={<Layout><Process /></Layout>} />
+          <Route path="/contact" element={<Layout><Contact /></Layout>} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
