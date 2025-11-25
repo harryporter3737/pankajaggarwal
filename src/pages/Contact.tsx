@@ -55,11 +55,11 @@ export default function Contact() {
       <div className="container mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-up">
-          <h1 className="font-sora font-bold text-text mb-4">
+          <h1 className="font-sora font-bold text-text mb-6">
             Let's build something that works for your business
           </h1>
-          <p className="text-muted max-w-2xl mx-auto text-lg">
-            Fill out the form below or reach out directly via WhatsApp or email. Quick responses guaranteed.
+          <p className="text-muted max-w-2xl mx-auto text-base leading-relaxed">
+            Fill out the form below or reach out directly via WhatsApp or email. I respond quickly and we can discuss your project in detail.
           </p>
         </div>
 
@@ -213,19 +213,23 @@ export default function Contact() {
             </Card>
 
             {/* Payment Info */}
-            <Card className="p-6 bg-gradient-to-br from-accent/10 to-accent-2/10 border border-border">
-              <h3 className="font-sora font-semibold mb-3">Payment Information</h3>
-              <ul className="space-y-2 text-sm text-muted">
-                <li className="flex items-start gap-2">
-                  <span className="text-accent mt-0.5">•</span>
-                  <span>Payment accepted via UPI / bank transfer after scope agreement</span>
+            <Card className="p-8 bg-gradient-to-br from-accent/10 to-accent-2/10 border border-border">
+              <h3 className="font-sora font-semibold mb-4 text-text text-lg">Payment Terms</h3>
+              <ul className="space-y-3 text-sm text-muted leading-relaxed">
+                <li className="flex items-start gap-3">
+                  <span className="text-accent mt-0.5 font-bold">•</span>
+                  <span>Payments via UPI / Bank Transfer after scope agreement</span>
                 </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-accent mt-0.5">•</span>
-                  <span>50% advance to start, 50% before handover</span>
+                <li className="flex items-start gap-3">
+                  <span className="text-accent mt-0.5 font-bold">•</span>
+                  <span>50% advance to start the project</span>
                 </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-accent mt-0.5">•</span>
+                <li className="flex items-start gap-3">
+                  <span className="text-accent mt-0.5 font-bold">•</span>
+                  <span>50% payable before final handover</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-accent mt-0.5 font-bold">•</span>
                   <span>Invoice provided post-payment confirmation</span>
                 </li>
               </ul>
