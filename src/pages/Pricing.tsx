@@ -100,8 +100,8 @@ export default function Pricing() {
         {/* Header */}
         <div className="text-center mb-16 animate-fade-up">
           <h1 className="font-sora font-bold text-text mb-4">Transparent pricing approach</h1>
-          <p className="text-muted max-w-2xl mx-auto text-lg">
-            Pricing depends on project scope. Final costing is discussed transparently over call or WhatsApp — no surprises, no hidden costs.
+          <p className="text-muted max-w-2xl mx-auto text-base leading-relaxed">
+            Clear packages tailored to your business needs. Final pricing depends on project scope and is discussed transparently over call or WhatsApp.
           </p>
         </div>
 
@@ -167,32 +167,32 @@ export default function Pricing() {
         </Card>
 
         {/* Payment Terms */}
-        <Card className="p-8 bg-surface border border-border mb-20">
-          <h2 className="font-sora font-bold text-2xl mb-6 text-center">Payment Terms</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-muted max-w-3xl mx-auto">
-            <div>
-              <ul className="space-y-3">
-                <li className="flex items-start gap-3">
-                  <Check className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
-                  <span>50% advance to start the project</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
-                  <span>50% payable before final handover</span>
-                </li>
-              </ul>
+        <Card className="p-10 bg-surface border border-border shadow-card max-w-3xl mx-auto mb-20">
+          <h2 className="font-sora font-semibold text-2xl mb-6 text-center text-text">Payment Information</h2>
+          <div className="space-y-5 text-muted">
+            <div className="flex items-start gap-3">
+              <span className="text-accent mt-1 text-lg">•</span>
+              <p className="text-sm leading-relaxed">
+                Pricing depends on project scope and is discussed transparently over call or WhatsApp
+              </p>
             </div>
-            <div>
-              <ul className="space-y-3">
-                <li className="flex items-start gap-3">
-                  <Check className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
-                  <span>Payments via UPI / GPay / bank transfer</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
-                  <span>Invoice provided post-payment confirmation</span>
-                </li>
-              </ul>
+            <div className="flex items-start gap-3">
+              <span className="text-accent mt-1 text-lg">•</span>
+              <p className="text-sm leading-relaxed">
+                Payment accepted via <strong className="text-text">UPI / bank transfer</strong> after scope agreement
+              </p>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="text-accent mt-1 text-lg">•</span>
+              <p className="text-sm leading-relaxed">
+                <strong className="text-text">50% advance</strong> required to start, <strong className="text-text">50% before handover</strong>
+              </p>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="text-accent mt-1 text-lg">•</span>
+              <p className="text-sm leading-relaxed">
+                Invoice provided post-payment confirmation
+              </p>
             </div>
           </div>
         </Card>
