@@ -2,39 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Premium Portfolio Design System */
+/* Premium Portfolio Design System - High Contrast */
 
 @layer base {
   :root {
-    /* Core Colors - Light Mode - HIGH CONTRAST */
+    /* Core Colors - Light Mode - MAXIMUM CONTRAST */
     --bg: 0 0% 100%;
-    --surface: 210 17% 98%;
+    --surface: 0 0% 95%;
     --text: 0 0% 0%;
-    --muted: 0 0% 29%;
-    --accent: 231 79% 63%;
-    --accent-2: 158 64% 68%;
-    --accent-cta-text: 0 0% 100%;
-    --border: 216 12% 92%;
+    --text-secondary: 0 0% 20%;
+    --text-muted: 0 0% 33%;
+    --accent: 228 100% 62%;
+    --accent-hover: 228 100% 56%;
+    --border: 0 0% 85%;
     
     /* Shadcn compatibility */
     --background: 0 0% 100%;
     --foreground: 0 0% 0%;
-    --card: 220 23% 98%;
+    --card: 0 0% 95%;
     --card-foreground: 0 0% 0%;
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 0%;
-    --primary: 231 60% 63%;
+    --primary: 228 100% 62%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 220 23% 96%;
+    --secondary: 0 0% 95%;
     --secondary-foreground: 0 0% 0%;
-    --muted: 220 23% 96%;
-    --muted-foreground: 0 0% 29%;
-    --accent: 220 23% 96%;
-    --accent-foreground: 0 0% 0%;
+    --muted: 0 0% 95%;
+    --muted-foreground: 0 0% 33%;
+    --accent: 228 100% 62%;
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    --input: 218 35% 91%;
-    --ring: 231 60% 63%;
+    --input: 0 0% 85%;
+    --ring: 228 100% 62%;
     --radius: 0.5rem;
     
     /* Typography Scale */
@@ -53,47 +53,47 @@
     --space-7: 64px;
     
     /* Shadows */
-    --card-shadow: 0 8px 20px hsla(218, 26%, 7%, 0.06);
-    --card-shadow-hover: 0 12px 30px hsla(231, 60%, 63%, 0.14);
+    --card-shadow: 0 8px 20px hsla(0, 0%, 0%, 0.06);
+    --card-shadow-hover: 0 12px 30px hsla(228, 100%, 62%, 0.15);
     
     /* Animations */
     --transition-smooth: all 180ms cubic-bezier(0.22, 0.9, 0.3, 1);
   }
 
   [data-theme="dark"] {
-    /* Core Colors - Dark Mode - HIGH CONTRAST */
-    --bg: 220 20% 6%;
-    --surface: 222 18% 7%;
+    /* Core Colors - Dark Mode - MAXIMUM CONTRAST */
+    --bg: 0 0% 0%;
+    --surface: 0 0% 7%;
     --text: 0 0% 100%;
-    --muted: 0 0% 70%;
-    --accent: 0 0% 96%;
-    --accent-2: 158 64% 60%;
-    --accent-cta-text: 220 20% 6%;
-    --border: 0 0% 100% / 0.12;
+    --text-secondary: 0 0% 93%;
+    --text-muted: 0 0% 71%;
+    --accent: 228 100% 71%;
+    --accent-hover: 228 100% 77%;
+    --border: 0 0% 16%;
     
     /* Shadcn compatibility */
-    --background: 220 19% 11%;
+    --background: 0 0% 0%;
     --foreground: 0 0% 100%;
-    --card: 220 30% 5%;
+    --card: 0 0% 7%;
     --card-foreground: 0 0% 100%;
-    --popover: 220 30% 5%;
+    --popover: 0 0% 7%;
     --popover-foreground: 0 0% 100%;
-    --primary: 231 70% 70%;
-    --primary-foreground: 220 30% 5%;
-    --secondary: 217 33% 17%;
+    --primary: 228 100% 71%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 0 0% 14%;
     --secondary-foreground: 0 0% 100%;
-    --muted: 217 33% 17%;
-    --muted-foreground: 0 0% 70%;
-    --accent: 217 33% 17%;
-    --accent-foreground: 0 0% 100%;
+    --muted: 0 0% 14%;
+    --muted-foreground: 0 0% 71%;
+    --accent: 228 100% 71%;
+    --accent-foreground: 0 0% 0%;
     --destructive: 0 63% 31%;
-    --destructive-foreground: 218 35% 93%;
-    --input: 217 33% 17%;
-    --ring: 231 70% 70%;
+    --destructive-foreground: 0 0% 100%;
+    --input: 0 0% 14%;
+    --ring: 228 100% 71%;
     
     /* Shadows - Dark Mode */
-    --card-shadow: 0 6px 18px hsla(220, 40%, 2%, 0.6);
-    --card-shadow-hover: 0 12px 30px hsla(220, 40%, 2%, 0.8);
+    --card-shadow: 0 6px 18px hsla(0, 0%, 0%, 0.6);
+    --card-shadow-hover: 0 12px 30px hsla(228, 100%, 71%, 0.2);
   }
 }
 
@@ -111,11 +111,15 @@
     font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     font-size: var(--fs-body);
     line-height: 1.5;
+    color: hsl(var(--text)) !important;
+    opacity: 1 !important;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: "Sora", "Poppins", system-ui, sans-serif;
     line-height: 1.2;
+    color: hsl(var(--text)) !important;
+    opacity: 1 !important;
   }
 
   h1 {
@@ -132,9 +136,29 @@
     font-size: var(--fs-h3);
     font-weight: 600;
   }
+
+  p, span, div, label, li {
+    color: hsl(var(--text)) !important;
+    opacity: 1 !important;
+  }
+
+  ::placeholder {
+    color: hsl(var(--text-muted)) !important;
+    opacity: 1 !important;
+  }
 }
 
 @layer utilities {
+  .text-muted {
+    color: hsl(var(--text-muted)) !important;
+    opacity: 1 !important;
+  }
+
+  .text-secondary {
+    color: hsl(var(--text-secondary)) !important;
+    opacity: 1 !important;
+  }
+
   /* Reduced motion support */
   @media (prefers-reduced-motion: reduce) {
     *,
@@ -144,15 +168,5 @@
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
     }
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-
-  body {
-    @apply bg-background text-foreground;
   }
 }

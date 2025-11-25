@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss";
 
 export default {
-  darkMode: ["class"],
+  darkMode: ["class", '[data-theme="dark"]'],
   content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
   prefix: "",
   theme: {
@@ -21,10 +21,10 @@ export default {
         bg: "hsl(var(--bg))",
         surface: "hsl(var(--surface))",
         text: "hsl(var(--text))",
-        muted: "hsl(var(--muted))",
+        "text-secondary": "hsl(var(--text-secondary))",
+        "text-muted": "hsl(var(--text-muted))",
         accent: "hsl(var(--accent))",
-        "accent-2": "hsl(var(--accent-2))",
-        "accent-cta-text": "hsl(var(--accent-cta-text))",
+        "accent-hover": "hsl(var(--accent-hover))",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -41,6 +41,10 @@ export default {
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
         },
         card: {
           DEFAULT: "hsl(var(--card))",
