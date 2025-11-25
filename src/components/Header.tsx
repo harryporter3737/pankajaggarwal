@@ -45,7 +45,7 @@ export const Header = () => {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link to="/" className="font-sora text-xl font-bold text-text hover:text-accent transition-colors">
-            Pankaj
+            Pankaj Aggarwal
           </Link>
 
           {/* Desktop Navigation */}

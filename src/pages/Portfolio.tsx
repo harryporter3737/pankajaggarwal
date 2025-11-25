@@ -1,16 +1,19 @@
 import { ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import portfolioDesktop from "@/assets/jayesh-portfolio-desktop.png";
 
 const projects = [
   {
     title: "Costume Designer Portfolio",
     category: "Portfolio Website",
+    client: "Fashion Industry Client",
     description:
-      "Designed and developed a clean, professional website for a fashion costume designer. Fully responsive. Focused on showcasing portfolio work. Smooth navigation & contact accessibility.",
+      "Built for a fashion costume designer. Minimal, storytelling layout with mobile-first approach. Focus on showcasing portfolio work, smooth navigation, and contact accessibility.",
     role: "Design & Development",
-    tech: ["React", "Tailwind CSS", "Responsive Design"],
-    liveUrl: "#",
+    tech: ["React", "Tailwind CSS", "Responsive Design", "Performance Optimization"],
+    liveUrl: "https://jayeshtawarmalani.in",
+    image: portfolioDesktop,
   },
 ];
 
@@ -37,19 +40,24 @@ export default function Portfolio() {
               {/* Images */}
               <div className="space-y-4">
                 <Card className="p-4 bg-surface border border-border shadow-card overflow-hidden">
-                  <div className="aspect-video bg-gradient-to-br from-accent/20 to-accent-2/20 rounded-lg flex items-center justify-center">
-                    <p className="text-muted">Desktop View</p>
+                  <div className="rounded-lg overflow-hidden">
+                    <img 
+                      src={project.image} 
+                      alt={`${project.title} - Desktop View`}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
                   </div>
                 </Card>
                 <div className="grid grid-cols-2 gap-4">
                   <Card className="p-3 bg-surface border border-border shadow-card">
                     <div className="aspect-[9/16] bg-gradient-to-br from-accent/20 to-accent-2/20 rounded flex items-center justify-center">
-                      <p className="text-muted text-xs">Mobile</p>
+                      <p className="text-muted text-xs">Mobile View</p>
                     </div>
                   </Card>
                   <Card className="p-3 bg-surface border border-border shadow-card">
                     <div className="aspect-[9/16] bg-gradient-to-br from-accent-2/20 to-accent/20 rounded flex items-center justify-center">
-                      <p className="text-muted text-xs">Detail</p>
+                      <p className="text-muted text-xs">UI Detail</p>
                     </div>
                   </Card>
                 </div>
@@ -58,7 +66,8 @@ export default function Portfolio() {
               {/* Content */}
               <div>
                 <span className="text-accent text-sm font-medium">{project.category}</span>
-                <h2 className="font-sora font-bold text-text mt-2 mb-4">{project.title}</h2>
+                <h2 className="font-sora font-bold text-text mt-2 mb-2">{project.title}</h2>
+                <p className="text-sm text-muted mb-4">{project.client}</p>
                 
                 <p className="text-muted mb-6">{project.description}</p>
 
@@ -102,7 +111,7 @@ export default function Portfolio() {
             Want to see your project here?
           </h2>
           <p className="text-muted mb-8 max-w-2xl mx-auto">
-            Let's work together to create something amazing for your business.
+            Let's work together to create something amazing for your business. Reach out for a quick discussion.
           </p>
           <Button
             size="lg"

@@ -12,10 +12,10 @@ export default function Home() {
           {/* Left Column - Copy */}
           <div className="max-w-2xl animate-fade-up">
             <h1 className="font-sora font-bold text-text mb-6">
-              I'm a Software Engineer & Web Developer.
+              Hi, I'm Pankaj Aggarwal.
             </h1>
             <p className="text-xl md:text-2xl font-semibold text-text mb-6 leading-snug">
-              I build websites that don't just look good — they work, respond, convert, and help businesses grow online.
+              I design and develop websites that are fast, responsive, and built to help businesses grow — without the fluff.
             </p>
             <p className="text-muted text-lg mb-8">
               Whether you're starting out or scaling up, your website should help you move forward — not just exist online.
@@ -30,15 +30,15 @@ export default function Home() {
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
               </Link>
-              <a href="#pricing">
+              <Link to="/portfolio">
                 <Button
                   variant="outline"
                   size="lg"
                   className="border-border hover:border-accent hover:text-accent transition-all duration-200"
                 >
-                  See pricing
+                  View portfolio
                 </Button>
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -85,58 +85,98 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services Teaser */}
-      <section id="services-teaser" className="bg-surface py-16">
+      {/* About Preview */}
+      <section className="bg-surface py-16">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-12">
-            <h2 className="font-sora font-bold text-text mb-4">Core services I provide</h2>
-            <p className="text-muted max-w-2xl mx-auto">
-              From design to deployment, I handle every aspect of your web presence
-            </p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="font-sora font-bold text-text mb-4">
+                Engineer turned Web Developer
+              </h2>
+              <p className="text-muted mb-6">
+                I'm Pankaj Aggarwal, founder of Pankaj Aggarwal Pvt. Ltd. I build websites using engineering logic with modern UI design. My focus is clarity, performance, responsiveness, and long-term sustainability.
+              </p>
+              <Link to="/about">
+                <Button
+                  variant="outline"
+                  className="border-border hover:border-accent hover:text-accent transition-all duration-200 group"
+                >
+                  More about me
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Button>
+              </Link>
+            </div>
+            <div className="grid grid-cols-1 gap-4">
+              {[
+                "Clarity in every decision",
+                "Reliable & maintainable code",
+                "Performance-driven approach",
+              ].map((value, idx) => (
+                <Card
+                  key={idx}
+                  className="p-4 bg-background border border-border shadow-card hover:shadow-card-hover transition-all duration-300"
+                >
+                  <p className="text-sm font-medium flex items-center gap-3">
+                    <span className="text-accent">✓</span>
+                    {value}
+                  </p>
+                </Card>
+              ))}
+            </div>
           </div>
+        </div>
+      </section>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              {
-                title: "Core Development",
-                items: ["Custom website design & development", "Landing page development", "Responsive UI across devices"],
-              },
-              {
-                title: "Growth & Optimization",
-                items: ["Website revamp & modernization", "Performance optimization", "SEO fundamentals"],
-              },
-              {
-                title: "Maintenance",
-                items: ["Security best practices", "Regular updates", "Priority support"],
-              },
-            ].map((service, idx) => (
-              <Card
-                key={idx}
-                className="p-6 bg-background border border-border shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1"
-              >
-                <h3 className="font-sora font-semibold text-lg mb-4">{service.title}</h3>
-                <ul className="space-y-2 text-sm text-muted">
-                  {service.items.map((item, i) => (
-                    <li key={i} className="flex items-start gap-2">
-                      <span className="text-accent mt-1">•</span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </Card>
-            ))}
-          </div>
+      {/* Services Overview */}
+      <section className="container mx-auto px-6 py-20">
+        <div className="text-center mb-12">
+          <h2 className="font-sora font-bold text-text mb-4">What I offer</h2>
+          <p className="text-muted max-w-2xl mx-auto">
+            From design to development, I handle every aspect of your web presence
+          </p>
+        </div>
 
-          <div className="text-center mt-8">
-            <Link to="/services">
-              <Button
-                variant="outline"
-                className="border-border hover:border-accent hover:text-accent transition-all duration-200"
-              >
-                View all services
-              </Button>
-            </Link>
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {[
+            {
+              title: "Development",
+              items: ["Custom Website Development", "Landing Page Development", "Website Revamp & Modernization"],
+            },
+            {
+              title: "Optimization",
+              items: ["Performance Optimization", "UI/UX Layout Structuring", "Basic SEO Setup"],
+            },
+            {
+              title: "Support",
+              items: ["Website Maintenance", "Regular Updates", "Technical Support"],
+            },
+          ].map((service, idx) => (
+            <Card
+              key={idx}
+              className="p-6 bg-surface border border-border shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1"
+            >
+              <h3 className="font-sora font-semibold text-lg mb-4">{service.title}</h3>
+              <ul className="space-y-2 text-sm text-muted">
+                {service.items.map((item, i) => (
+                  <li key={i} className="flex items-start gap-2">
+                    <span className="text-accent mt-1">•</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </Card>
+          ))}
+        </div>
+
+        <div className="text-center mt-8">
+          <Link to="/services">
+            <Button
+              variant="outline"
+              className="border-border hover:border-accent hover:text-accent transition-all duration-200"
+            >
+              View all services
+            </Button>
+          </Link>
         </div>
       </section>
 
@@ -150,62 +190,77 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="order-1 lg:order-2">
-            <span className="text-accent text-sm font-medium">Featured Project</span>
-            <h2 className="font-sora font-bold text-text mt-2 mb-4">Costume Designer Portfolio</h2>
-            <p className="text-muted mb-6">
-              Designed and developed a clean, professional website for a fashion costume designer.
-              Fully responsive. Focused on showcasing portfolio work. Smooth navigation & contact accessibility.
-            </p>
-            <Link to="/portfolio">
-              <Button
-                variant="outline"
-                className="border-border hover:border-accent hover:text-accent transition-all duration-200 group"
-              >
-                View project
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Button>
-            </Link>
-          </div>
+            <div className="order-1 lg:order-2">
+              <span className="text-accent text-sm font-medium">Featured Project</span>
+              <h2 className="font-sora font-bold text-text mt-2 mb-4">Costume Designer Website</h2>
+              <p className="text-muted mb-4">
+                Built for fashion industry client. Minimal, storytelling layout with mobile-first approach.
+              </p>
+              <p className="text-muted mb-6">
+                Focus: Showcasing portfolio work, smooth navigation, and contact accessibility with clean professional design.
+              </p>
+              <Link to="/portfolio">
+                <Button
+                  variant="outline"
+                  className="border-border hover:border-accent hover:text-accent transition-all duration-200 group"
+                >
+                  View project
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Button>
+              </Link>
+            </div>
         </div>
       </section>
 
       {/* Pricing Teaser */}
-      <section id="pricing" className="bg-surface py-16">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="font-sora font-bold text-text mb-4">Simple, transparent pricing</h2>
+      <section className="container mx-auto px-6 py-20">
+        <div className="text-center">
+          <h2 className="font-sora font-bold text-text mb-4">Transparent pricing, tailored to your needs</h2>
           <p className="text-muted mb-8 max-w-2xl mx-auto">
-            Pick a plan that matches where your business is today — we'll customise details on a quick call.
+            Pricing depends on project scope. Final costing discussed transparently over call or WhatsApp.
           </p>
           <Link to="/pricing">
             <Button
               size="lg"
               className="bg-accent hover:bg-accent/90 text-accent-cta-text font-medium transition-all duration-200 hover:-translate-y-1 shadow-card hover:shadow-card-hover"
             >
-              View pricing details
+              View pricing approach
             </Button>
           </Link>
         </div>
       </section>
 
       {/* Final CTA */}
-      <section className="container mx-auto px-6 py-20">
-        <Card className="p-12 bg-gradient-to-br from-accent/10 to-accent-2/10 border border-border text-center">
-          <h2 className="font-sora font-bold text-text mb-4">
-            Ready to get your business online the right way?
-          </h2>
-          <p className="text-muted mb-8 max-w-2xl mx-auto">
-            Let's discuss your project and see how I can help you achieve your business goals.
-          </p>
-          <Link to="/contact">
-            <Button
-              size="lg"
-              className="bg-accent hover:bg-accent/90 text-accent-cta-text font-medium transition-all duration-200 hover:-translate-y-1 shadow-card hover:shadow-card-hover"
-            >
-              Get in touch
-            </Button>
-          </Link>
-        </Card>
+      <section className="bg-surface py-20">
+        <div className="container mx-auto px-6">
+          <Card className="p-12 bg-gradient-to-br from-accent/10 to-accent-2/10 border border-border text-center">
+            <h2 className="font-sora font-bold text-text mb-4">
+              Let's build something that works for your business
+            </h2>
+            <p className="text-muted mb-8 max-w-2xl mx-auto">
+              Quick responses and transparent communication. Reach out via WhatsApp or email to get started.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/contact">
+                <Button
+                  size="lg"
+                  className="bg-accent hover:bg-accent/90 text-accent-cta-text font-medium transition-all duration-200 hover:-translate-y-1 shadow-card hover:shadow-card-hover"
+                >
+                  Get in touch
+                </Button>
+              </Link>
+              <a href="https://wa.me/919999999999" target="_blank" rel="noopener noreferrer">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="border-border hover:border-accent hover:text-accent transition-all duration-200"
+                >
+                  WhatsApp
+                </Button>
+              </a>
+            </div>
+          </Card>
+        </div>
       </section>
     </div>
   );

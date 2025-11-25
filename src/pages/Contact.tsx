@@ -56,10 +56,10 @@ export default function Contact() {
         {/* Header */}
         <div className="text-center mb-16 animate-fade-up">
           <h1 className="font-sora font-bold text-text mb-4">
-            Ready to get your business online the right way?
+            Let's build something that works for your business
           </h1>
           <p className="text-muted max-w-2xl mx-auto text-lg">
-            Fill out the form below or reach out directly via WhatsApp or email
+            Fill out the form below or reach out directly via WhatsApp or email. Quick responses guaranteed.
           </p>
         </div>
 
@@ -118,15 +118,15 @@ export default function Contact() {
               </div>
 
               <div>
-                <Label htmlFor="budget">Budget Bracket</Label>
+                <Label htmlFor="budget">Budget Bracket (Optional)</Label>
                 <Select value={formData.budget} onValueChange={(value) => handleChange("budget", value)}>
                   <SelectTrigger className="mt-2">
                     <SelectValue placeholder="Select your budget range" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="basic">₹35k - ₹45k (Basic)</SelectItem>
-                    <SelectItem value="premium">₹50k - ₹65k (Premium)</SelectItem>
-                    <SelectItem value="custom">₹80k - ₹1.2L (Custom)</SelectItem>
+                    <SelectItem value="basic">Basic Package</SelectItem>
+                    <SelectItem value="premium">Premium Package</SelectItem>
+                    <SelectItem value="custom">Custom Package</SelectItem>
                     <SelectItem value="flexible">Flexible</SelectItem>
                   </SelectContent>
                 </Select>
@@ -152,7 +152,7 @@ export default function Contact() {
                 <div className="flex-1">
                   <h3 className="font-sora font-semibold mb-2">WhatsApp (Preferred)</h3>
                   <p className="text-muted text-sm mb-4">
-                    Quick responses and easy communication. Best for initial discussions.
+                    Quick responses and easy communication. Best for initial discussions and ongoing project updates.
                   </p>
                   <a
                     href="https://wa.me/919999999999"
@@ -178,9 +178,9 @@ export default function Contact() {
                 <div className="flex-1">
                   <h3 className="font-sora font-semibold mb-2">Email</h3>
                   <p className="text-muted text-sm mb-4">
-                    For detailed project briefs and formal communication.
+                    For detailed project briefs and formal communication. I respond within 24 hours.
                   </p>
-                  <a href="mailto:hello@pankaj.dev">
+                  <a href="mailto:hello@pankajaggarwal.com">
                     <Button
                       variant="outline"
                       className="border-border hover:border-accent hover:text-accent transition-all duration-200"
@@ -218,15 +218,15 @@ export default function Contact() {
               <ul className="space-y-2 text-sm text-muted">
                 <li className="flex items-start gap-2">
                   <span className="text-accent mt-0.5">•</span>
+                  <span>Payment accepted via UPI / bank transfer after scope agreement</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-accent mt-0.5">•</span>
                   <span>50% advance to start, 50% before handover</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-accent mt-0.5">•</span>
-                  <span>UPI / GPay / Bank transfer accepted</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-accent mt-0.5">•</span>
-                  <span>Invoice provided post-payment</span>
+                  <span>Invoice provided post-payment confirmation</span>
                 </li>
               </ul>
             </Card>
