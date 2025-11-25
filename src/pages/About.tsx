@@ -1,5 +1,6 @@
-import { Code2, Sparkles, Rocket } from "lucide-react";
+import { Code2, Sparkles, Target } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import profileImage from "@/assets/pankaj-profile.png";
 
 export default function About() {
   return (
@@ -8,39 +9,36 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left - Content */}
           <div className="animate-fade-up">
-            <h1 className="font-sora font-bold text-text mb-8">Hi, I'm Pankaj.</h1>
+            <h1 className="font-sora font-bold text-text mb-8">Hi, I'm Pankaj Aggarwal.</h1>
             
             <div className="space-y-6 text-muted">
               <p>
-                I started as a Software Engineer, solving backend problems and making digital systems more reliable. 
-                Today I apply the same engineering mindset to web development — combining logic, clean design, and user-focused experience.
+                I'm a Software Engineer turned Web Developer. Founder of Pankaj Aggarwal Pvt. Ltd.
               </p>
               
               <p>
-                I create modern, performance-driven websites for businesses of all sizes. No agency jargon. 
-                No over-promising. Just honest work that delivers results.
+                I build websites using engineering logic with modern UI design. My focus is clarity, performance, responsiveness, and long-term sustainability.
               </p>
               
               <p>
-                Whether you need a simple landing page or a complete web presence, I bring technical expertise 
-                and business understanding to every project.
+                Whether you need a simple landing page or a complete web presence, I bring technical expertise and business understanding to every project. No jargon, no over-promising — just honest work that delivers measurable results.
               </p>
             </div>
 
             <div className="mt-8 pt-8 border-t border-border">
-              <h3 className="font-sora font-semibold text-lg mb-4">What I bring to your project</h3>
+              <h3 className="font-sora font-semibold text-lg mb-4">Values I build by</h3>
               <ul className="space-y-3 text-muted">
                 <li className="flex items-start gap-3">
                   <span className="text-accent mt-1">•</span>
-                  <span><strong className="text-text">Engineer mindset</strong> – Structured, logical approach to problem-solving</span>
+                  <span><strong className="text-text">Clarity</strong> — Clear communication, realistic timelines, transparent pricing</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-accent mt-1">•</span>
-                  <span><strong className="text-text">Clean code</strong> – Maintainable, scalable solutions built to last</span>
+                  <span><strong className="text-text">Reliability</strong> — Maintainable code, documented systems, long-term thinking</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-accent mt-1">•</span>
-                  <span><strong className="text-text">UX-first</strong> – Every decision focused on user experience and conversions</span>
+                  <span><strong className="text-text">Performance</strong> — Fast websites that convert visitors into customers</span>
                 </li>
               </ul>
             </div>
@@ -49,8 +47,12 @@ export default function About() {
           {/* Right - Visual Elements */}
           <div className="space-y-6 animate-fade-up" style={{ animationDelay: "150ms" }}>
             <Card className="p-8 bg-surface border border-border shadow-card">
-              <div className="aspect-square bg-gradient-to-br from-accent/20 to-accent-2/20 rounded-lg flex items-center justify-center mb-6">
-                <p className="text-muted">Developer Photo</p>
+              <div className="aspect-square rounded-lg overflow-hidden mb-6">
+                <img 
+                  src={profileImage} 
+                  alt="Pankaj Aggarwal - Web Developer" 
+                  className="w-full h-full object-cover"
+                />
               </div>
               
               <div className="space-y-4">
@@ -76,11 +78,11 @@ export default function About() {
 
                 <div className="flex items-center gap-4 p-4 bg-background/50 rounded-lg">
                   <div className="p-2 bg-accent/10 rounded">
-                    <Rocket className="h-5 w-5 text-accent" />
+                    <Target className="h-5 w-5 text-accent" />
                   </div>
                   <div>
-                    <p className="font-medium text-sm">Backend Thinking</p>
-                    <p className="text-xs text-muted">Full-stack understanding</p>
+                    <p className="font-medium text-sm">Full-Stack Thinking</p>
+                    <p className="text-xs text-muted">End-to-end understanding</p>
                   </div>
                 </div>
               </div>

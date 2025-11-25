@@ -8,9 +8,12 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand */}
           <div>
-            <h3 className="font-sora font-bold text-lg mb-3">Pankaj</h3>
+            <h3 className="font-sora font-bold text-lg mb-3">Pankaj Aggarwal</h3>
             <p className="text-muted text-sm">
-              Software Engineer & Web Developer
+              Pankaj Aggarwal Pvt. Ltd.
+            </p>
+            <p className="text-muted text-sm mt-1">
+              Full-Stack Web Developer & Digital Solutions
             </p>
           </div>
 
@@ -66,7 +69,8 @@ export const Footer = () => {
         </div>
 
         <div className="mt-8 pt-8 border-t border-border text-center text-sm text-muted">
-          <p>&copy; {new Date().getFullYear()} Pankaj. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Pankaj Aggarwal Pvt. Ltd. — All Rights Reserved.</p>
+          <p className="mt-2 text-xs">Built by Pankaj Aggarwal</p>
         </div>
       </div>
     </footer>

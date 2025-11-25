@@ -6,48 +6,48 @@ import { Card } from "@/components/ui/card";
 const services = [
   {
     icon: Layout,
-    title: "Custom website design & development",
+    title: "Custom Website Development",
     description: "Bespoke websites tailored to your brand and business goals. Built with modern technologies for performance and scalability.",
   },
   {
     icon: Zap,
-    title: "Landing page development",
+    title: "Landing Page Development",
     description: "High-converting landing pages designed to capture leads and drive action. Optimized for speed and user experience.",
   },
   {
     icon: Wrench,
-    title: "Website revamp & modernization",
+    title: "Website Revamp & Modernization",
     description: "Breathe new life into your existing website. Update design, improve performance, and enhance user experience.",
   },
   {
     icon: Zap,
-    title: "Performance optimization",
+    title: "Performance Optimization",
     description: "Speed up your website and improve Core Web Vitals. Faster sites mean better user experience and higher conversions.",
   },
   {
-    icon: Shield,
-    title: "Security best practices",
-    description: "Implement security measures to protect your site and user data. Regular updates and monitoring included.",
+    icon: Palette,
+    title: "UI/UX Layout Structuring",
+    description: "Strategic layout planning to guide visitors toward action. Clean, intuitive interfaces that enhance user experience.",
   },
   {
     icon: Search,
-    title: "SEO fundamentals",
+    title: "Basic SEO Setup",
     description: "On-page SEO optimization to help your site rank better. Technical SEO, meta tags, and performance improvements.",
   },
   {
-    icon: Palette,
-    title: "Brand-consistent UI",
-    description: "Design systems that maintain your brand identity across all pages. Consistent, professional, and polished.",
+    icon: Shield,
+    title: "Security Best Practices",
+    description: "Implement security measures to protect your site and user data. Regular updates and monitoring included.",
   },
   {
     icon: Layout,
-    title: "Conversion-focused layout",
-    description: "Strategic layout planning to guide visitors toward action. Data-informed design decisions that drive results.",
+    title: "Responsive Design",
+    description: "Websites that work perfectly across all devices. Mobile-first approach ensuring seamless experience everywhere.",
   },
   {
     icon: Wrench,
-    title: "Maintenance & support",
-    description: "Ongoing website care to keep everything running smoothly. Regular updates, backups, and priority support.",
+    title: "Website Maintenance",
+    description: "Ongoing website care to keep everything running smoothly. Regular updates, backups, and priority support when needed.",
   },
 ];
 
@@ -57,7 +57,7 @@ export default function Services() {
       <div className="container mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-up">
-          <h1 className="font-sora font-bold text-text mb-4">Core services I provide</h1>
+          <h1 className="font-sora font-bold text-text mb-4">Services I provide</h1>
           <p className="text-muted max-w-2xl mx-auto text-lg">
             From design to deployment to ongoing care, I handle every aspect of your web presence
           </p>
@@ -115,7 +115,7 @@ export default function Services() {
                 size="lg"
                 className="border-border hover:border-accent hover:text-accent transition-all duration-200"
               >
-                View pricing
+                View pricing approach
               </Button>
             </Link>
           </div>
