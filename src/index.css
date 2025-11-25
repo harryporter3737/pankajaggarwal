@@ -18,19 +18,19 @@
     
     /* Shadcn compatibility */
     --background: 0 0% 100%;
-    --foreground: 218 26% 7%;
+    --foreground: 0 0% 0%;
     --card: 220 23% 98%;
-    --card-foreground: 218 26% 7%;
+    --card-foreground: 0 0% 0%;
     --popover: 0 0% 100%;
-    --popover-foreground: 218 26% 7%;
+    --popover-foreground: 0 0% 0%;
     --primary: 231 60% 63%;
     --primary-foreground: 0 0% 100%;
     --secondary: 220 23% 96%;
-    --secondary-foreground: 218 26% 7%;
+    --secondary-foreground: 0 0% 0%;
     --muted: 220 23% 96%;
-    --muted-foreground: 215 16% 53%;
+    --muted-foreground: 0 0% 29%;
     --accent: 220 23% 96%;
-    --accent-foreground: 218 26% 7%;
+    --accent-foreground: 0 0% 0%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
     --input: 218 35% 91%;
@@ -73,19 +73,19 @@
     
     /* Shadcn compatibility */
     --background: 220 19% 11%;
-    --foreground: 0 0% 96%;
+    --foreground: 0 0% 100%;
     --card: 220 30% 5%;
-    --card-foreground: 0 0% 96%;
+    --card-foreground: 0 0% 100%;
     --popover: 220 30% 5%;
-    --popover-foreground: 0 0% 96%;
+    --popover-foreground: 0 0% 100%;
     --primary: 231 70% 70%;
     --primary-foreground: 220 30% 5%;
     --secondary: 217 33% 17%;
-    --secondary-foreground: 0 0% 96%;
+    --secondary-foreground: 0 0% 100%;
     --muted: 217 33% 17%;
-    --muted-foreground: 220 9% 68%;
+    --muted-foreground: 0 0% 70%;
     --accent: 217 33% 17%;
-    --accent-foreground: 0 0% 96%;
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 63% 31%;
     --destructive-foreground: 218 35% 93%;
     --input: 217 33% 17%;
