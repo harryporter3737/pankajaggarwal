@@ -49,11 +49,11 @@ export const Footer = () => {
             <h4 className="font-semibold mb-3">Get in touch</h4>
             <div className="space-y-2">
               <a
-                href="mailto:hello@pankaj.dev"
+                href="mailto:pankajaggarwalbusiness@gmail.com"
                 className="flex items-center gap-2 text-sm text-muted hover:text-accent transition-colors"
               >
                 <Mail className="h-4 w-4" />
-                hello@pankaj.dev
+                pankajaggarwalbusiness@gmail.com
               </a>
               <a
                 href="https://wa.me/919999999999"
