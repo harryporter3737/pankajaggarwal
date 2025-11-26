@@ -4,9 +4,48 @@ import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { toast } from "@/hooks/use-toast";
+import { useState } from "react";
 import heroGradient from "@/assets/bg-hero-gradient.jpg";
 
 export default function Contact() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        form.reset();
+        toast({
+          title: "Message sent successfully!",
+          description: "Thanks for reaching out. I'll get back to you soon.",
+        });
+      } else {
+        throw new Error("Failed to send message");
+      }
+    } catch (error) {
+      toast({
+        title: "Failed to send message",
+        description: "Please try again or contact me directly via WhatsApp.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <div className="relative min-h-screen py-20 overflow-hidden">
@@ -38,6 +77,7 @@ export default function Contact() {
             <form
               action="https://formspree.io/f/xblevgwa"
               method="POST"
+              onSubmit={handleSubmit}
               className="space-y-4"
             >
               <div>
@@ -127,9 +167,10 @@ export default function Contact() {
 
               <Button
                 type="submit"
+                disabled={isSubmitting}
                 className="w-full bg-accent hover:bg-accent/90 text-white font-semibold transition-all duration-200 hover:-translate-y-1 shadow-card hover:shadow-card-hover"
               >
-                Send
+                {isSubmitting ? "Sending..." : "Send message"}
               </Button>
             </form>
           </Card>
