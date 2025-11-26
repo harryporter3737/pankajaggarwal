@@ -7,20 +7,13 @@ import portfolioDesktop from "@/assets/jayesh-portfolio-desktop.png";
 import profileImage from "@/assets/pankaj-profile-new.jpg";
 import heroGradient from "@/assets/bg-hero-gradient.jpg";
 import patternAbstract from "@/assets/bg-pattern-abstract.jpg";
-
 export default function Home() {
-  return (
-    <div className="min-h-screen">
+  return <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative container mx-auto px-4 sm:px-6 py-12 sm:py-16 lg:py-24 overflow-hidden">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0 opacity-20">
-          <img 
-            src={heroGradient} 
-            alt="" 
-            className="w-full h-full object-cover"
-            loading="eager"
-          />
+          <img src={heroGradient} alt="" className="w-full h-full object-cover" loading="eager" />
           <div className="absolute inset-0 bg-white/60 dark:bg-black/80" />
         </div>
         <div className="relative z-10">
@@ -38,20 +31,13 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Link to="/contact">
-                <Button
-                  size="lg"
-                  className="bg-accent hover:bg-accent/90 text-accent-cta-text font-medium transition-all duration-200 hover:-translate-y-1 shadow-card hover:shadow-card-hover group"
-                >
+                <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-cta-text font-medium transition-all duration-200 hover:-translate-y-1 shadow-card hover:shadow-card-hover group">
                   Let's build yours
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
               </Link>
               <Link to="/portfolio">
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="border-border hover:border-accent hover:text-accent transition-all duration-200"
-                >
+                <Button variant="outline" size="lg" className="border-border hover:border-accent hover:text-accent transition-all duration-200">
                   View portfolio
                 </Button>
               </Link>
@@ -59,19 +45,14 @@ export default function Home() {
           </div>
 
           {/* Right - Profile Image */}
-          <div className="animate-fade-up flex justify-center lg:justify-end" style={{ animationDelay: "150ms" }}>
+          <div className="animate-fade-up flex justify-center lg:justify-end" style={{
+            animationDelay: "150ms"
+          }}>
             <div className="relative">
               <div className="w-56 h-56 sm:w-64 sm:h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-border shadow-card bg-gradient-to-br from-accent/5 to-accent-2/5">
-                <img 
-                  src={profileImage} 
-                  alt="Pankaj Aggarwal - Web Developer" 
-                  className="w-full h-full object-cover"
-                  loading="eager"
-                />
+                <img src={profileImage} alt="Pankaj Aggarwal - Web Developer" className="w-full h-full object-cover" loading="eager" />
               </div>
-              <div className="absolute -bottom-3 -right-3 sm:-bottom-4 sm:-right-4 bg-accent text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg shadow-card font-medium text-sm sm:text-base">
-                Let's build together
-              </div>
+              
             </div>
           </div>
         </div>
@@ -90,10 +71,7 @@ export default function Home() {
               I build websites using engineering logic and modern UI design. My focus: clarity, performance, responsiveness, and long-term maintainability.
             </p>
             <Link to="/about">
-              <Button
-                variant="outline"
-                className="border-border hover:border-accent hover:text-accent transition-all duration-200"
-              >
+              <Button variant="outline" className="border-border hover:border-accent hover:text-accent transition-all duration-200">
                 Learn more about me
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
@@ -127,7 +105,9 @@ export default function Home() {
             </p>
           </Card>
 
-          <Card className="p-6 sm:p-8 bg-surface border border-border shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1 animate-fade-up" style={{ animationDelay: "100ms" }}>
+          <Card className="p-6 sm:p-8 bg-surface border border-border shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1 animate-fade-up" style={{
+          animationDelay: "100ms"
+        }}>
             <div className="mb-4">
               <div className="inline-flex p-3 bg-accent-2/10 rounded-lg">
                 <Zap className="h-7 w-7 text-accent-2" />
@@ -139,7 +119,9 @@ export default function Home() {
             </p>
           </Card>
 
-          <Card className="p-6 sm:p-8 bg-surface border border-border shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1 animate-fade-up" style={{ animationDelay: "200ms" }}>
+          <Card className="p-6 sm:p-8 bg-surface border border-border shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1 animate-fade-up" style={{
+          animationDelay: "200ms"
+        }}>
             <div className="mb-4">
               <div className="inline-flex p-3 bg-accent/10 rounded-lg">
                 <Search className="h-7 w-7 text-accent" />
@@ -152,12 +134,11 @@ export default function Home() {
           </Card>
         </div>
 
-        <div className="text-center animate-fade-up" style={{ animationDelay: "300ms" }}>
+        <div className="text-center animate-fade-up" style={{
+        animationDelay: "300ms"
+      }}>
           <Link to="/services">
-            <Button
-              variant="outline"
-              className="border-border hover:border-accent hover:text-accent transition-all duration-200"
-            >
+            <Button variant="outline" className="border-border hover:border-accent hover:text-accent transition-all duration-200">
               View all services
             </Button>
           </Link>
@@ -171,16 +152,13 @@ export default function Home() {
             <div className="order-2 lg:order-1 animate-fade-up">
               <Card className="p-4 bg-background border border-border shadow-card overflow-hidden">
                 <div className="rounded-lg overflow-hidden">
-                  <img 
-                    src={portfolioDesktop} 
-                    alt="Costume Designer Website - Desktop View"
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                  />
+                  <img src={portfolioDesktop} alt="Costume Designer Website - Desktop View" className="w-full h-full object-cover" loading="lazy" />
                 </div>
               </Card>
             </div>
-            <div className="order-1 lg:order-2 animate-fade-up" style={{ animationDelay: "150ms" }}>
+            <div className="order-1 lg:order-2 animate-fade-up" style={{
+            animationDelay: "150ms"
+          }}>
               <span className="text-accent text-sm font-medium">Featured Project</span>
               <h2 className="font-sora font-bold text-text mt-2 mb-4">Costume Designer Website</h2>
               <p className="text-muted mb-4 leading-relaxed">
@@ -190,10 +168,7 @@ export default function Home() {
                 Focus on showcasing portfolio work, smooth navigation, and contact accessibility.
               </p>
               <Link to="/portfolio">
-                <Button
-                  variant="outline"
-                  className="border-border hover:border-accent hover:text-accent transition-all duration-200 group"
-                >
+                <Button variant="outline" className="border-border hover:border-accent hover:text-accent transition-all duration-200 group">
                   View project
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
@@ -211,10 +186,7 @@ export default function Home() {
             Clear packages tailored to your business needs. Final pricing discussed transparently based on project scope.
           </p>
           <Link to="/pricing">
-            <Button
-              size="lg"
-              className="bg-accent hover:bg-accent/90 text-accent-cta-text font-medium transition-all duration-200 hover:-translate-y-1 shadow-card hover:shadow-card-hover"
-            >
+            <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-cta-text font-medium transition-all duration-200 hover:-translate-y-1 shadow-card hover:shadow-card-hover">
               View pricing approach
             </Button>
           </Link>
@@ -225,12 +197,7 @@ export default function Home() {
       <section className="relative bg-surface py-12 sm:py-16 md:py-20 overflow-hidden">
         {/* Background Pattern with Overlay */}
         <div className="absolute inset-0 z-0 opacity-10">
-          <img 
-            src={patternAbstract} 
-            alt="" 
-            className="w-full h-full object-cover"
-            loading="lazy"
-          />
+          <img src={patternAbstract} alt="" className="w-full h-full object-cover" loading="lazy" />
           <div className="absolute inset-0 bg-white/70 dark:bg-black/80" />
         </div>
         <div className="relative z-10 container mx-auto px-6">
@@ -242,24 +209,13 @@ export default function Home() {
               Let's discuss your project and create something that helps your business grow.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-              <a
-                href="https://wa.me/917206543706?text=Hi%20Pankaj,%20I'd%20like%20to%20discuss%20a%20website%20project."
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button
-                  size="lg"
-                  className="bg-accent hover:bg-accent/90 text-accent-cta-text font-medium transition-all duration-200 hover:-translate-y-1 shadow-card hover:shadow-card-hover"
-                >
+              <a href="https://wa.me/917206543706?text=Hi%20Pankaj,%20I'd%20like%20to%20discuss%20a%20website%20project." target="_blank" rel="noopener noreferrer">
+                <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-cta-text font-medium transition-all duration-200 hover:-translate-y-1 shadow-card hover:shadow-card-hover">
                   Let's build yours →
                 </Button>
               </a>
               <Link to="/contact">
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="border-border hover:border-accent hover:text-accent transition-all duration-200"
-                >
+                <Button variant="outline" size="lg" className="border-border hover:border-accent hover:text-accent transition-all duration-200">
                   Contact me
                 </Button>
               </Link>
@@ -267,6 +223,5 @@ export default function Home() {
           </Card>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 }
