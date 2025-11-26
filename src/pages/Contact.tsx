@@ -1,12 +1,21 @@
+import { useState } from "react";
 import { MessageCircle, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import heroGradient from "@/assets/bg-hero-gradient.jpg";
 
 export default function Contact() {
+  const [budget, setBudget] = useState("");
 
   return (
     <div className="relative min-h-screen py-20 overflow-hidden">
@@ -87,13 +96,18 @@ export default function Contact() {
 
               <div>
                 <Label htmlFor="budget">Budget Bracket (Optional)</Label>
-                <Input
-                  id="budget"
-                  name="budget"
-                  type="text"
-                  className="mt-2"
-                  placeholder="e.g. Small / Medium / Premium"
-                />
+                <input type="hidden" name="budget" value={budget} />
+                <Select value={budget} onValueChange={setBudget}>
+                  <SelectTrigger className="mt-2">
+                    <SelectValue placeholder="Select your budget range" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="basic">Basic Package</SelectItem>
+                    <SelectItem value="premium">Premium Package</SelectItem>
+                    <SelectItem value="custom">Custom Package</SelectItem>
+                    <SelectItem value="flexible">Flexible</SelectItem>
+                  </SelectContent>
+                </Select>
               </div>
 
               <Button
