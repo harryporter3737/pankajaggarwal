@@ -8,12 +8,12 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand */}
           <div>
-            <h3 className="font-sora font-bold text-lg mb-3">Pankaj Aggarwal</h3>
+            <h3 className="font-sora font-bold text-lg mb-3">NetFlux Studios</h3>
             <p className="text-muted text-sm">
-              Pankaj Aggarwal Pvt. Ltd.
+              Code. Convert. Scale.
             </p>
             <p className="text-muted text-sm mt-1">
-              Full-Stack Web Developer & Digital Solutions
+              Modern digital studio for scalable web solutions
             </p>
           </div>
 
@@ -56,7 +56,7 @@ export const Footer = () => {
                 pankajaggarwalbusiness@gmail.com
               </a>
               <a
-                href="https://wa.me/917206543706?text=Hi%20Pankaj,%20I'd%20like%20to%20discuss%20a%20website%20project."
+                href="https://wa.me/917206543706?text=Hi%20NetFlux%20Studios,%20I'd%20like%20to%20discuss%20a%20website%20project."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-sm text-muted hover:text-accent transition-colors"
@@ -69,7 +69,7 @@ export const Footer = () => {
         </div>
 
         <div className="mt-8 pt-8 border-t border-border text-center text-sm text-muted">
-          <p>&copy; {new Date().getFullYear()} Pankaj Aggarwal Pvt. Ltd. — All Rights Reserved.</p>
+          <p>&copy; {new Date().getFullYear()} NetFlux Studios — All Rights Reserved.</p>
         </div>
       </div>
     </footer>
