@@ -60,18 +60,13 @@ export default function Home() {
 
           {/* Right - Profile Image */}
           <div className="animate-fade-up flex justify-center lg:justify-end" style={{ animationDelay: "150ms" }}>
-            <div className="relative">
-              <div className="w-56 h-56 sm:w-64 sm:h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-border shadow-card bg-gradient-to-br from-accent/5 to-accent-2/5">
-                <img 
-                  src={profileImage} 
-                  alt="Pankaj Aggarwal - Web Developer" 
-                  className="w-full h-full object-cover"
-                  loading="eager"
-                />
-              </div>
-              <div className="absolute -bottom-3 -right-3 sm:-bottom-4 sm:-right-4 bg-accent text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg shadow-card font-medium text-sm sm:text-base">
-                Let's build together
-              </div>
+            <div className="w-56 h-56 sm:w-64 sm:h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-border shadow-card bg-gradient-to-br from-accent/5 to-accent-2/5">
+              <img 
+                src={profileImage} 
+                alt="Pankaj Aggarwal - Web Developer" 
+                className="w-full h-full object-cover"
+                loading="eager"
+              />
             </div>
           </div>
         </div>
