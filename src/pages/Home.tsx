@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import portfolioDesktop from "@/assets/jayesh-portfolio-desktop.png";
-import profileImage from "@/assets/pankaj-profile.png";
+import profileImage from "@/assets/pankaj-profile-new.jpg";
 
 export default function Home() {
   return (
@@ -47,7 +47,7 @@ export default function Home() {
           {/* Right - Profile Image */}
           <div className="animate-fade-up flex justify-center lg:justify-end" style={{ animationDelay: "150ms" }}>
             <div className="relative">
-              <div className="w-64 h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-border shadow-card">
+              <div className="w-64 h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-border shadow-card bg-gradient-to-br from-accent/5 to-accent-2/5">
                 <img 
                   src={profileImage} 
                   alt="Pankaj Aggarwal - Web Developer" 
@@ -55,7 +55,7 @@ export default function Home() {
                   loading="eager"
                 />
               </div>
-              <div className="absolute -bottom-4 -right-4 bg-accent text-accent-cta-text px-4 py-2 rounded-lg shadow-card font-medium">
+              <div className="absolute -bottom-4 -right-4 bg-accent text-white px-4 py-2 rounded-lg shadow-card font-medium">
                 Let's build together
               </div>
             </div>
@@ -215,7 +215,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://wa.me/919999999999"
+                href="https://wa.me/917206543706?text=Hi%20Pankaj,%20I'd%20like%20to%20discuss%20a%20website%20project."
                 target="_blank"
                 rel="noopener noreferrer"
               >

@@ -1,7 +1,9 @@
+import { useState } from "react";
 import { ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import portfolioDesktop from "@/assets/jayesh-portfolio-desktop.png";
+import { PortfolioModal } from "@/components/PortfolioModal";
 
 const projects = [
   {
@@ -18,6 +20,14 @@ const projects = [
 ];
 
 export default function Portfolio() {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState({ src: "", alt: "" });
+
+  const openModal = (src: string, alt: string) => {
+    setSelectedImage({ src, alt });
+    setModalOpen(true);
+  };
+
   return (
     <div className="min-h-screen py-20">
       <div className="container mx-auto px-6">
@@ -39,12 +49,15 @@ export default function Portfolio() {
             >
               {/* Images */}
               <div className="space-y-4">
-                <Card className="p-4 bg-surface border border-border shadow-card overflow-hidden">
+                <Card 
+                  className="p-4 bg-surface border border-border shadow-card overflow-hidden cursor-pointer hover:shadow-card-hover transition-all duration-300"
+                  onClick={() => openModal(project.image, `${project.title} - Desktop View`)}
+                >
                   <div className="rounded-lg overflow-hidden">
                     <img 
                       src={project.image} 
                       alt={`${project.title} - Desktop View`}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                       loading="lazy"
                     />
                   </div>
@@ -121,6 +134,14 @@ export default function Portfolio() {
             Start your project
           </Button>
         </Card>
+
+        {/* Portfolio Modal */}
+        <PortfolioModal
+          isOpen={modalOpen}
+          onClose={() => setModalOpen(false)}
+          imageSrc={selectedImage.src}
+          imageAlt={selectedImage.alt}
+        />
       </div>
     </div>
   );
