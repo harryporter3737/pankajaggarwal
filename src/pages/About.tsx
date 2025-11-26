@@ -23,17 +23,17 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
           {/* Left - Text */}
           <div className="animate-fade-up">
-            <h1 className="font-sora font-bold text-text mb-6">About us</h1>
+            <h1 className="font-sora font-bold text-text mb-6">About me</h1>
             <div className="space-y-6 text-muted leading-relaxed">
               <p className="text-base">
-                We're <span className="font-semibold text-text">NetFlux Studios</span> — a digital studio founded by Pankaj Aggarwal. We help businesses scale online through modern design, clean code, and results-driven strategy.
+                I'm Pankaj Aggarwal, a Software Engineer turned Web Developer and founder of <span className="font-semibold text-text">Pankaj Aggarwal Pvt. Ltd.</span>
               </p>
               <p className="text-base">
-                Our founder started as a Software Engineer, solving backend problems and making digital systems more reliable. 
-                Today we apply the same engineering mindset to web development — combining logic, clean design, and user-focused experience.
+                I started as a Software Engineer, solving backend problems and making digital systems more reliable. 
+                Today I apply the same engineering mindset to web development — combining logic, clean design, and user-focused experience.
               </p>
               <p className="text-base font-medium text-text">
-                We build websites using engineering logic and modern UI design. Our focus: clarity, performance, responsiveness, and long-term maintainability.
+                I build websites using engineering logic and modern UI design. My focus: clarity, performance, responsiveness, and long-term maintainability.
               </p>
               <p className="text-base">
                 No agency jargon. No over-promising. Just honest work that delivers results for businesses of all sizes.
@@ -47,14 +47,14 @@ export default function About() {
               <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-border shadow-card bg-gradient-to-br from-accent/5 to-accent-2/5">
                 <img 
                   src={profileImage} 
-                  alt="Pankaj Aggarwal - Founder of NetFlux Studios"
+                  alt="Pankaj Aggarwal - Founder of Pankaj Aggarwal Pvt. Ltd."
                   className="w-full h-full object-cover"
                   loading="eager"
                 />
               </div>
               <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 bg-surface border border-border px-6 py-3 rounded-lg shadow-card">
                 <p className="font-sora font-semibold text-text">Pankaj Aggarwal</p>
-                <p className="text-muted text-sm">Founder, NetFlux Studios</p>
+                <p className="text-muted text-sm">Founder & Developer</p>
               </div>
             </div>
           </div>
@@ -62,7 +62,7 @@ export default function About() {
 
         {/* Values Section */}
         <div className="mb-20">
-          <h2 className="font-sora font-bold text-text text-center mb-4">Values we build by</h2>
+          <h2 className="font-sora font-bold text-text text-center mb-4">Values I build by</h2>
           <p className="text-muted text-center mb-12 max-w-2xl mx-auto text-base">
             Every project is guided by these core principles
           </p>
@@ -123,7 +123,7 @@ export default function About() {
             Let's work together
           </h2>
           <p className="text-muted mb-8 max-w-2xl mx-auto text-base leading-relaxed">
-            Ready to bring your web project to life? Let's discuss how we can help your business grow online.
+            Ready to bring your web project to life? Let's discuss how I can help your business grow online.
           </p>
           <button
             onClick={() => window.location.href = '/contact'}

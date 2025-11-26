@@ -27,10 +27,10 @@ export default function Home() {
           {/* Left - Copy */}
           <div className="animate-fade-up">
             <h1 className="font-sora font-bold text-text mb-6 leading-tight">
-              Welcome to NetFlux Studios
+              Hi, I'm Pankaj Aggarwal.
             </h1>
             <p className="text-base sm:text-lg md:text-xl font-semibold text-text mb-3 sm:mb-4 leading-snug">
-              We design and develop websites that are fast, responsive, and built to help your business grow — without the fluff.
+              I design and develop websites that are fast, responsive, and built to help your business grow — without the fluff.
             </p>
             <p className="text-muted mb-6 sm:mb-8 text-sm sm:text-base leading-relaxed">
               Whether you're starting out or scaling up, your website should help you move forward — not just exist online.
@@ -63,7 +63,7 @@ export default function Home() {
               <div className="w-56 h-56 sm:w-64 sm:h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-border shadow-card bg-gradient-to-br from-accent/5 to-accent-2/5">
                 <img 
                   src={profileImage} 
-                  alt="Pankaj Aggarwal - Founder of NetFlux Studios" 
+                  alt="Pankaj Aggarwal - Web Developer" 
                   className="w-full h-full object-cover"
                   loading="eager"
                 />
@@ -81,19 +81,19 @@ export default function Home() {
       <section className="bg-surface py-12 sm:py-16 md:py-20">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-4xl mx-auto text-center animate-fade-up">
-            <h2 className="font-sora font-bold text-text mb-6">About us</h2>
+            <h2 className="font-sora font-bold text-text mb-6">About me</h2>
             <p className="text-text mb-3 sm:mb-4 text-base sm:text-lg max-w-2xl mx-auto font-medium px-4">
-              We're NetFlux Studios — a digital studio founded by Pankaj Aggarwal. We help businesses scale online through modern design, clean code, and results-driven strategy.
+              I'm Pankaj Aggarwal, a Software Engineer turned Web Developer and founder of Pankaj Aggarwal Pvt. Ltd.
             </p>
             <p className="text-muted mb-6 sm:mb-8 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed px-4">
-              We build websites using engineering logic and modern UI design. Our focus: clarity, performance, responsiveness, and long-term maintainability.
+              I build websites using engineering logic and modern UI design. My focus: clarity, performance, responsiveness, and long-term maintainability.
             </p>
             <Link to="/about">
               <Button
                 variant="outline"
                 className="border-border hover:border-accent hover:text-accent transition-all duration-200"
               >
-                Learn more about us
+                Learn more about me
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
@@ -104,9 +104,9 @@ export default function Home() {
       {/* Services Overview */}
       <section className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20">
         <div className="text-center mb-12 animate-fade-up">
-          <h2 className="font-sora font-bold text-text mb-4">What we do</h2>
+          <h2 className="font-sora font-bold text-text mb-4">What I do</h2>
           <p className="text-muted max-w-2xl mx-auto text-base leading-relaxed">
-            From concept to deployment, we handle every aspect of web development
+            From concept to deployment, I handle every aspect of web development
           </p>
         </div>
 
@@ -239,7 +239,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <a
-                href="https://wa.me/917206543706?text=Hi%20NetFlux%20Studios,%20I'd%20like%20to%20discuss%20a%20website%20project."
+                href="https://wa.me/917206543706?text=Hi%20Pankaj,%20I'd%20like%20to%20discuss%20a%20website%20project."
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -256,7 +256,7 @@ export default function Home() {
                   size="lg"
                   className="border-border hover:border-accent hover:text-accent transition-all duration-200"
                 >
-                  Contact us
+                  Contact me
                 </Button>
               </Link>
             </div>

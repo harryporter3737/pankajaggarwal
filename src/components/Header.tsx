@@ -4,7 +4,6 @@ import { Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
 import { ThemeToggle } from "./ThemeToggle";
 import { cn } from "@/lib/utils";
-import netfluxLogo from "@/assets/netflux-logo.png";
 
 const navLinks = [
   { name: "About", path: "/about" },
@@ -45,15 +44,8 @@ export const Header = () => {
       <div className="container mx-auto px-6">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 group" aria-label="NetFlux Studios Logo">
-            <img 
-              src={netfluxLogo} 
-              alt="NetFlux Studios" 
-              className="h-8 w-auto"
-            />
-            <span className="hidden sm:block text-xs text-muted group-hover:text-accent transition-colors animate-fade-in" style={{ animationDelay: "300ms" }}>
-              Code. Convert. Scale.
-            </span>
+          <Link to="/" className="font-sora text-xl font-bold text-text hover:text-accent transition-colors">
+            Pankaj Aggarwal
           </Link>
 
           {/* Desktop Navigation */}
