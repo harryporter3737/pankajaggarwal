@@ -2,6 +2,7 @@ import { Code, Zap, Target, Shield } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import Ticker from "@/components/Ticker";
 import profileImage from "@/assets/pankaj-profile-new.jpg";
 import teamBg from "@/assets/bg-process-team.jpg";
 
@@ -58,6 +59,11 @@ export default function About() {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Ticker Slider */}
+        <div className="my-12 -mx-6">
+          <Ticker />
         </div>
 
         {/* Values Section */}

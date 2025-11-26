@@ -2,6 +2,7 @@ import { ArrowRight, Code, Zap, Shield, Search } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import Ticker from "@/components/Ticker";
 import portfolioDesktop from "@/assets/jayesh-portfolio-desktop.png";
 import profileImage from "@/assets/pankaj-profile-new.jpg";
 import heroGradient from "@/assets/bg-hero-gradient.jpg";
@@ -100,6 +101,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Ticker Slider */}
+      <Ticker />
 
       {/* Services Overview */}
       <section className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20">
