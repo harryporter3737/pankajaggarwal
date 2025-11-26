@@ -5,23 +5,38 @@ import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import heroGradient from "@/assets/bg-hero-gradient.jpg";
 
 export default function Contact() {
-  const [budget, setBudget] = useState("");
+  const [errors, setErrors] = useState<Record<string, string>>({});
 
   const handleInvalid = (e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     e.preventDefault();
     const target = e.currentTarget;
+    const fieldName = target.name;
+    
+    // Set error message
+    setErrors(prev => ({
+      ...prev,
+      [fieldName]: target.validationMessage || "This field is required"
+    }));
+    
     target.scrollIntoView({ behavior: "smooth", block: "center" });
     setTimeout(() => target.focus(), 300);
+  };
+
+  const handleChange = (e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const target = e.currentTarget;
+    const fieldName = target.name;
+    
+    // Clear error when user starts typing
+    if (errors[fieldName]) {
+      setErrors(prev => {
+        const newErrors = { ...prev };
+        delete newErrors[fieldName];
+        return newErrors;
+      });
+    }
   };
 
   return (
@@ -34,7 +49,7 @@ export default function Contact() {
           className="w-full h-full object-cover"
           loading="lazy"
         />
-        <div className="absolute inset-0 bg-background/85 dark:bg-background/90" />
+        <div className="absolute inset-0 bg-white/85 dark:bg-black/90" />
       </div>
       <div className="relative z-10 container mx-auto px-6">
         {/* Header */}
@@ -57,31 +72,41 @@ export default function Contact() {
               className="space-y-6"
             >
               <div>
-                <Label htmlFor="name">Name *</Label>
+                <Label htmlFor="name" className="text-foreground">Name *</Label>
                 <Input
                   id="name"
                   name="name"
                   type="text"
                   required
-                  className="mt-2"
+                  className={`mt-2 ${errors.name ? 'border-destructive' : ''}`}
                   placeholder="Your full name"
                   onInvalid={handleInvalid}
+                  onChange={handleChange}
                 />
+                {errors.name && (
+                  <p className="text-destructive text-sm mt-1">{errors.name}</p>
+                )}
               </div>
 
               <div>
-                <Label htmlFor="business">Business / Organization</Label>
+                <Label htmlFor="business" className="text-foreground">Business / Organization *</Label>
                 <Input
                   id="business"
                   name="business"
                   type="text"
-                  className="mt-2"
+                  required
+                  className={`mt-2 ${errors.business ? 'border-destructive' : ''}`}
                   placeholder="Your business name"
+                  onInvalid={handleInvalid}
+                  onChange={handleChange}
                 />
+                {errors.business && (
+                  <p className="text-destructive text-sm mt-1">{errors.business}</p>
+                )}
               </div>
 
               <div>
-                <Label htmlFor="website">Current Website (Optional)</Label>
+                <Label htmlFor="website" className="text-foreground">Current Website (Optional)</Label>
                 <Input
                   id="website"
                   name="website"
@@ -92,62 +117,71 @@ export default function Contact() {
               </div>
 
               <div>
-                <Label htmlFor="email">Email Address (Optional)</Label>
+                <Label htmlFor="email" className="text-foreground">Email Address *</Label>
                 <Input
                   id="email"
                   name="email"
                   type="email"
-                  className="mt-2"
+                  required
+                  className={`mt-2 ${errors.email ? 'border-destructive' : ''}`}
                   placeholder="contact@yourbrand.com"
+                  onInvalid={handleInvalid}
+                  onChange={handleChange}
                 />
+                {errors.email && (
+                  <p className="text-destructive text-sm mt-1">{errors.email}</p>
+                )}
               </div>
 
               <div>
-                <Label htmlFor="phone">Phone Number *</Label>
+                <Label htmlFor="phone" className="text-foreground">Phone Number *</Label>
                 <Input
                   id="phone"
                   name="phone"
                   type="tel"
                   required
-                  className="mt-2"
+                  className={`mt-2 ${errors.phone ? 'border-destructive' : ''}`}
                   placeholder="+91 98765 43210"
                   onInvalid={handleInvalid}
+                  onChange={handleChange}
                 />
+                {errors.phone && (
+                  <p className="text-destructive text-sm mt-1">{errors.phone}</p>
+                )}
               </div>
 
               <div>
-                <Label htmlFor="requirement">Brief Requirement *</Label>
+                <Label htmlFor="requirement" className="text-foreground">Brief Requirement *</Label>
                 <Textarea
                   id="requirement"
                   name="requirement"
                   required
-                  className="mt-2 min-h-[120px]"
+                  className={`mt-2 min-h-[120px] ${errors.requirement ? 'border-destructive' : ''}`}
                   placeholder="Tell me about your project..."
                   onInvalid={handleInvalid}
+                  onChange={handleChange}
                 />
+                {errors.requirement && (
+                  <p className="text-destructive text-sm mt-1">{errors.requirement}</p>
+                )}
               </div>
 
               <div>
-                <Label htmlFor="budget">Budget Bracket (Optional)</Label>
-                <input type="hidden" name="budget" value={budget} />
-                <Select value={budget} onValueChange={setBudget}>
-                  <SelectTrigger className="mt-2">
-                    <SelectValue placeholder="Select your budget range" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="basic">Basic Package</SelectItem>
-                    <SelectItem value="premium">Premium Package</SelectItem>
-                    <SelectItem value="custom">Custom Package</SelectItem>
-                    <SelectItem value="flexible">Flexible</SelectItem>
-                  </SelectContent>
-                </Select>
+                <Label htmlFor="budget" className="text-foreground">Budget Bracket (Optional)</Label>
+                <Input
+                  id="budget"
+                  name="budget"
+                  type="text"
+                  className="mt-2"
+                  placeholder="Small / Medium / Premium"
+                />
               </div>
 
               <Button
                 type="submit"
-                className="w-full bg-accent hover:bg-accent/90 text-accent-cta-text font-medium transition-all duration-200 hover:-translate-y-1 shadow-card hover:shadow-card-hover"
+                className="w-full bg-accent hover:bg-accent/90 text-white font-semibold transition-all duration-200 hover:-translate-y-1 shadow-card hover:shadow-card-hover"
               >
-                Send message
+                Send
               </Button>
             </form>
           </Card>

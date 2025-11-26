@@ -13,7 +13,9 @@
     --text-secondary: 0 0% 20%;
     --text-muted: 0 0% 33%;
     --accent: 228 100% 62%;
+    --accent-2: 270 80% 60%;
     --accent-hover: 228 100% 56%;
+    --accent-cta-text: 0 0% 100%;
     --border: 0 0% 85%;
     
     /* Shadcn compatibility */
@@ -68,7 +70,9 @@
     --text-secondary: 0 0% 93%;
     --text-muted: 0 0% 71%;
     --accent: 228 100% 71%;
+    --accent-2: 270 80% 70%;
     --accent-hover: 228 100% 77%;
+    --accent-cta-text: 0 0% 0%;
     --border: 0 0% 16%;
     
     /* Shadcn compatibility */
