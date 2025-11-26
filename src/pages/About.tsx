@@ -1,6 +1,6 @@
 import { Code, Zap, Target, Shield } from "lucide-react";
 import { Card } from "@/components/ui/card";
-import profileImage from "@/assets/pankaj-profile.png";
+import profileImage from "@/assets/pankaj-profile-new.jpg";
 
 export default function About() {
   return (
@@ -31,7 +31,7 @@ export default function About() {
           {/* Right - Image */}
           <div className="animate-fade-up flex justify-center" style={{ animationDelay: "150ms" }}>
             <div className="relative">
-              <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-2xl overflow-hidden border-4 border-border shadow-card">
+              <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-border shadow-card bg-gradient-to-br from-accent/5 to-accent-2/5">
                 <img 
                   src={profileImage} 
                   alt="Pankaj Aggarwal - Founder of Pankaj Aggarwal Pvt. Ltd."

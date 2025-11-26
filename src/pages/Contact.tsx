@@ -151,11 +151,12 @@ export default function Contact() {
                 </div>
                 <div className="flex-1">
                   <h3 className="font-sora font-semibold mb-2">WhatsApp (Preferred)</h3>
+                  <p className="text-muted text-sm mb-2">+91 7206543706</p>
                   <p className="text-muted text-sm mb-4">
                     Quick responses and easy communication. Best for initial discussions and ongoing project updates.
                   </p>
                   <a
-                    href="https://wa.me/919999999999"
+                    href="https://wa.me/917206543706?text=Hi%20Pankaj,%20I'd%20like%20to%20discuss%20a%20website%20project."
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -177,10 +178,11 @@ export default function Contact() {
                 </div>
                 <div className="flex-1">
                   <h3 className="font-sora font-semibold mb-2">Email</h3>
+                  <p className="text-muted text-sm mb-2">pankajaggarwalbusiness@gmail.com</p>
                   <p className="text-muted text-sm mb-4">
                     For detailed project briefs and formal communication. I respond within 24 hours.
                   </p>
-                  <a href="mailto:hello@pankajaggarwal.com">
+                  <a href="mailto:pankajaggarwalbusiness@gmail.com">
                     <Button
                       variant="outline"
                       className="border-border hover:border-accent hover:text-accent transition-all duration-200"
@@ -188,26 +190,6 @@ export default function Contact() {
                       Send email
                     </Button>
                   </a>
-                </div>
-              </div>
-            </Card>
-
-            <Card className="p-6 bg-surface border border-border shadow-card hover:shadow-card-hover transition-all duration-300">
-              <div className="flex items-start gap-4">
-                <div className="p-3 bg-accent/10 rounded-lg">
-                  <Calendar className="h-6 w-6 text-accent" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="font-sora font-semibold mb-2">Schedule a Call</h3>
-                  <p className="text-muted text-sm mb-4">
-                    Book a 15-minute discovery call to discuss your project in detail.
-                  </p>
-                  <Button
-                    variant="outline"
-                    className="border-border hover:border-accent hover:text-accent transition-all duration-200"
-                  >
-                    Book 15min call
-                  </Button>
                 </div>
               </div>
             </Card>

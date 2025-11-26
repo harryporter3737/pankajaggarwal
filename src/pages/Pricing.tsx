@@ -20,7 +20,6 @@ const pricingPlans = [
       "3–4 pages",
       "Enquiry form",
       "1 revision round",
-      "Basic SEO setup",
     ],
     cta: "Discuss Basic",
   },
@@ -141,8 +140,8 @@ export default function Pricing() {
                 <Button
                   className={`w-full transition-all duration-200 hover:-translate-y-1 ${
                     plan.popular
-                      ? "bg-accent hover:bg-accent/90 text-accent-cta-text shadow-card hover:shadow-card-hover"
-                      : "bg-surface hover:bg-accent hover:text-accent-cta-text border border-border"
+                      ? "bg-accent hover:bg-accent/90 text-white shadow-card hover:shadow-card-hover"
+                      : "bg-surface hover:bg-accent text-text hover:text-white border border-border"
                   }`}
                 >
                   {plan.cta}
@@ -258,7 +257,7 @@ export default function Pricing() {
                 Get in touch
               </Button>
             </Link>
-            <a href="https://wa.me/919999999999" target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/917206543706?text=Hi%20Pankaj,%20I'd%20like%20to%20discuss%20a%20website%20project." target="_blank" rel="noopener noreferrer">
               <Button
                 variant="outline"
                 size="lg"

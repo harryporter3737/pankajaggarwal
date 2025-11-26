@@ -70,7 +70,6 @@ export const Footer = () => {
 
         <div className="mt-8 pt-8 border-t border-border text-center text-sm text-muted">
           <p>&copy; {new Date().getFullYear()} Pankaj Aggarwal Pvt. Ltd. — All Rights Reserved.</p>
-          <p className="mt-2 text-xs">Built by Pankaj Aggarwal</p>
         </div>
       </div>
     </footer>
