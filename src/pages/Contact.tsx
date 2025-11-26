@@ -1,55 +1,12 @@
-import { useState } from "react";
-import { MessageCircle, Mail, Calendar } from "lucide-react";
+import { MessageCircle, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { useToast } from "@/hooks/use-toast";
 import heroGradient from "@/assets/bg-hero-gradient.jpg";
 
 export default function Contact() {
-  const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    business: "",
-    website: "",
-    requirement: "",
-    budget: "",
-  });
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    // Simulate form submission
-    setTimeout(() => {
-      toast({
-        title: "Message sent!",
-        description: "Thank you for reaching out. I'll get back to you within 24 hours.",
-      });
-      setIsSubmitting(false);
-      setFormData({
-        name: "",
-        business: "",
-        website: "",
-        requirement: "",
-        budget: "",
-      });
-    }, 1000);
-  };
-
-  const handleChange = (field: string, value: string) => {
-    setFormData((prev) => ({ ...prev, [field]: value }));
-  };
 
   return (
     <div className="relative min-h-screen py-20 overflow-hidden">
@@ -78,15 +35,18 @@ export default function Contact() {
           {/* Form */}
           <Card className="p-8 bg-surface border border-border shadow-card animate-fade-up">
             <h2 className="font-sora font-semibold text-xl mb-6">Send a message</h2>
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form
+              action="https://formspree.io/f/xblevgwa"
+              method="POST"
+              className="space-y-6"
+            >
               <div>
                 <Label htmlFor="name">Name *</Label>
                 <Input
                   id="name"
+                  name="name"
                   type="text"
                   required
-                  value={formData.name}
-                  onChange={(e) => handleChange("name", e.target.value)}
                   className="mt-2"
                   placeholder="Your full name"
                 />
@@ -96,9 +56,8 @@ export default function Contact() {
                 <Label htmlFor="business">Business / Organization</Label>
                 <Input
                   id="business"
+                  name="business"
                   type="text"
-                  value={formData.business}
-                  onChange={(e) => handleChange("business", e.target.value)}
                   className="mt-2"
                   placeholder="Your business name"
                 />
@@ -108,9 +67,8 @@ export default function Contact() {
                 <Label htmlFor="website">Current Website (if any)</Label>
                 <Input
                   id="website"
+                  name="website"
                   type="url"
-                  value={formData.website}
-                  onChange={(e) => handleChange("website", e.target.value)}
                   className="mt-2"
                   placeholder="https://example.com"
                 />
@@ -120,9 +78,8 @@ export default function Contact() {
                 <Label htmlFor="requirement">Brief Requirement *</Label>
                 <Textarea
                   id="requirement"
+                  name="requirement"
                   required
-                  value={formData.requirement}
-                  onChange={(e) => handleChange("requirement", e.target.value)}
                   className="mt-2 min-h-[120px]"
                   placeholder="Tell me about your project..."
                 />
@@ -130,25 +87,20 @@ export default function Contact() {
 
               <div>
                 <Label htmlFor="budget">Budget Bracket (Optional)</Label>
-                <Select value={formData.budget} onValueChange={(value) => handleChange("budget", value)}>
-                  <SelectTrigger className="mt-2">
-                    <SelectValue placeholder="Select your budget range" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="basic">Basic Package</SelectItem>
-                    <SelectItem value="premium">Premium Package</SelectItem>
-                    <SelectItem value="custom">Custom Package</SelectItem>
-                    <SelectItem value="flexible">Flexible</SelectItem>
-                  </SelectContent>
-                </Select>
+                <Input
+                  id="budget"
+                  name="budget"
+                  type="text"
+                  className="mt-2"
+                  placeholder="e.g. Small / Medium / Premium"
+                />
               </div>
 
               <Button
                 type="submit"
-                disabled={isSubmitting}
                 className="w-full bg-accent hover:bg-accent/90 text-accent-cta-text font-medium transition-all duration-200 hover:-translate-y-1 shadow-card hover:shadow-card-hover"
               >
-                {isSubmitting ? "Sending..." : "Send message"}
+                Send
               </Button>
             </form>
           </Card>
