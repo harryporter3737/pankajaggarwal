@@ -56,7 +56,7 @@ export const Footer = () => {
                 pankajaggarwalbusiness@gmail.com
               </a>
               <a
-                href="https://wa.me/919999999999"
+                href="https://wa.me/917206543706?text=Hi%20Pankaj,%20I'd%20like%20to%20discuss%20a%20website%20project."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-sm text-muted hover:text-accent transition-colors"
