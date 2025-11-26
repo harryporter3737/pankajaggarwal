@@ -53,9 +53,9 @@ export default function About() {
                   loading="eager"
                 />
               </div>
-              <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 bg-surface border border-border px-8 py-3 rounded-lg shadow-card text-center">
-                <p className="font-sora font-bold text-text text-lg tracking-tight">Pankaj Aggarwal</p>
-                <p className="font-sora text-muted text-sm tracking-wide">Founder & Developer</p>
+              <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 bg-surface border border-border px-6 py-3 rounded-lg shadow-card">
+                <p className="font-sora font-semibold text-text">Pankaj Aggarwal</p>
+                <p className="text-muted text-sm">Founder & Developer</p>
               </div>
             </div>
           </div>
