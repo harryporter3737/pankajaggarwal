@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { MessageCircle, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -8,36 +7,6 @@ import { Textarea } from "@/components/ui/textarea";
 import heroGradient from "@/assets/bg-hero-gradient.jpg";
 
 export default function Contact() {
-  const [errors, setErrors] = useState<Record<string, string>>({});
-
-  const handleInvalid = (e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    e.preventDefault();
-    const target = e.currentTarget;
-    const fieldName = target.name;
-    
-    // Set error message
-    setErrors(prev => ({
-      ...prev,
-      [fieldName]: target.validationMessage || "This field is required"
-    }));
-    
-    target.scrollIntoView({ behavior: "smooth", block: "center" });
-    setTimeout(() => target.focus(), 300);
-  };
-
-  const handleChange = (e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const target = e.currentTarget;
-    const fieldName = target.name;
-    
-    // Clear error when user starts typing
-    if (errors[fieldName]) {
-      setErrors(prev => {
-        const newErrors = { ...prev };
-        delete newErrors[fieldName];
-        return newErrors;
-      });
-    }
-  };
 
   return (
     <div className="relative min-h-screen py-20 overflow-hidden">
@@ -78,14 +47,9 @@ export default function Contact() {
                   name="name"
                   type="text"
                   required
-                  className={`mt-2 ${errors.name ? 'border-destructive' : ''}`}
+                  className="mt-2"
                   placeholder="Your full name"
-                  onInvalid={handleInvalid}
-                  onChange={handleChange}
                 />
-                {errors.name && (
-                  <p className="text-destructive text-sm mt-1">{errors.name}</p>
-                )}
               </div>
 
               <div>
@@ -95,14 +59,9 @@ export default function Contact() {
                   name="business"
                   type="text"
                   required
-                  className={`mt-2 ${errors.business ? 'border-destructive' : ''}`}
+                  className="mt-2"
                   placeholder="Your business name"
-                  onInvalid={handleInvalid}
-                  onChange={handleChange}
                 />
-                {errors.business && (
-                  <p className="text-destructive text-sm mt-1">{errors.business}</p>
-                )}
               </div>
 
               <div>
@@ -123,14 +82,9 @@ export default function Contact() {
                   name="email"
                   type="email"
                   required
-                  className={`mt-2 ${errors.email ? 'border-destructive' : ''}`}
+                  className="mt-2"
                   placeholder="contact@yourbrand.com"
-                  onInvalid={handleInvalid}
-                  onChange={handleChange}
                 />
-                {errors.email && (
-                  <p className="text-destructive text-sm mt-1">{errors.email}</p>
-                )}
               </div>
 
               <div>
@@ -140,14 +94,9 @@ export default function Contact() {
                   name="phone"
                   type="tel"
                   required
-                  className={`mt-2 ${errors.phone ? 'border-destructive' : ''}`}
+                  className="mt-2"
                   placeholder="+91 98765 43210"
-                  onInvalid={handleInvalid}
-                  onChange={handleChange}
                 />
-                {errors.phone && (
-                  <p className="text-destructive text-sm mt-1">{errors.phone}</p>
-                )}
               </div>
 
               <div>
@@ -156,25 +105,24 @@ export default function Contact() {
                   id="requirement"
                   name="requirement"
                   required
-                  className={`mt-2 min-h-[120px] ${errors.requirement ? 'border-destructive' : ''}`}
+                  className="mt-2 min-h-[120px]"
                   placeholder="Tell me about your project..."
-                  onInvalid={handleInvalid}
-                  onChange={handleChange}
                 />
-                {errors.requirement && (
-                  <p className="text-destructive text-sm mt-1">{errors.requirement}</p>
-                )}
               </div>
 
               <div>
                 <Label htmlFor="budget" className="text-foreground">Budget Bracket (Optional)</Label>
-                <Input
+                <select
                   id="budget"
                   name="budget"
-                  type="text"
-                  className="mt-2"
-                  placeholder="Small / Medium / Premium"
-                />
+                  className="mt-2 w-full p-2 border rounded-md bg-background text-foreground border-border focus:outline-none focus:ring-2 focus:ring-ring"
+                >
+                  <option value="">Select your budget range</option>
+                  <option value="Small">Small</option>
+                  <option value="Medium">Medium</option>
+                  <option value="Premium">Premium</option>
+                  <option value="Flexible">Flexible</option>
+                </select>
               </div>
 
               <Button
