@@ -38,7 +38,7 @@ export default function Contact() {
             <form
               action="https://formspree.io/f/xblevgwa"
               method="POST"
-              className="space-y-6"
+              className="space-y-4"
             >
               <div>
                 <Label htmlFor="name" className="text-foreground">Name *</Label>
