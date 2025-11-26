@@ -17,6 +17,13 @@ import heroGradient from "@/assets/bg-hero-gradient.jpg";
 export default function Contact() {
   const [budget, setBudget] = useState("");
 
+  const handleInvalid = (e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    e.preventDefault();
+    const target = e.currentTarget;
+    target.scrollIntoView({ behavior: "smooth", block: "center" });
+    setTimeout(() => target.focus(), 300);
+  };
+
   return (
     <div className="relative min-h-screen py-20 overflow-hidden">
       {/* Background Image with Overlay */}
@@ -58,6 +65,7 @@ export default function Contact() {
                   required
                   className="mt-2"
                   placeholder="Your full name"
+                  onInvalid={handleInvalid}
                 />
               </div>
 
@@ -103,6 +111,7 @@ export default function Contact() {
                   required
                   className="mt-2"
                   placeholder="+91 98765 43210"
+                  onInvalid={handleInvalid}
                 />
               </div>
 
@@ -114,6 +123,7 @@ export default function Contact() {
                   required
                   className="mt-2 min-h-[120px]"
                   placeholder="Tell me about your project..."
+                  onInvalid={handleInvalid}
                 />
               </div>
 
@@ -137,7 +147,7 @@ export default function Contact() {
                 type="submit"
                 className="w-full bg-accent hover:bg-accent/90 text-accent-cta-text font-medium transition-all duration-200 hover:-translate-y-1 shadow-card hover:shadow-card-hover"
               >
-                Send
+                Send message
               </Button>
             </form>
           </Card>
