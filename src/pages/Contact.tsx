@@ -73,13 +73,35 @@ export default function Contact() {
               </div>
 
               <div>
-                <Label htmlFor="website">Current Website (if any)</Label>
+                <Label htmlFor="website">Current Website (Optional)</Label>
                 <Input
                   id="website"
                   name="website"
                   type="url"
                   className="mt-2"
                   placeholder="https://example.com"
+                />
+              </div>
+
+              <div>
+                <Label htmlFor="email">Email Address (Optional)</Label>
+                <Input
+                  id="email"
+                  name="email"
+                  type="email"
+                  className="mt-2"
+                  placeholder="contact@yourbrand.com"
+                />
+              </div>
+
+              <div>
+                <Label htmlFor="phone">Phone Number (Optional)</Label>
+                <Input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  className="mt-2"
+                  placeholder="+91 98765 43210"
                 />
               </div>
 
