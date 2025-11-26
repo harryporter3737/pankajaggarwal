@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
-import { X, ZoomIn, ZoomOut } from "lucide-react";
+import { X, ZoomIn, ZoomOut, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface PortfolioModalProps {
@@ -8,9 +8,20 @@ interface PortfolioModalProps {
   onClose: () => void;
   imageSrc: string;
   imageAlt: string;
+  images: { src: string; alt: string }[];
+  currentIndex: number;
+  onNavigate: (index: number) => void;
 }
 
-export const PortfolioModal = ({ isOpen, onClose, imageSrc, imageAlt }: PortfolioModalProps) => {
+export const PortfolioModal = ({ 
+  isOpen, 
+  onClose, 
+  imageSrc, 
+  imageAlt, 
+  images, 
+  currentIndex, 
+  onNavigate 
+}: PortfolioModalProps) => {
   const [zoom, setZoom] = useState(1);
 
   const handleZoomIn = () => {
@@ -24,6 +35,20 @@ export const PortfolioModal = ({ isOpen, onClose, imageSrc, imageAlt }: Portfoli
   const handleClose = () => {
     setZoom(1);
     onClose();
+  };
+
+  const handlePrevious = () => {
+    if (currentIndex > 0) {
+      setZoom(1);
+      onNavigate(currentIndex - 1);
+    }
+  };
+
+  const handleNext = () => {
+    if (currentIndex < images.length - 1) {
+      setZoom(1);
+      onNavigate(currentIndex + 1);
+    }
   };
 
   return (
@@ -58,6 +83,28 @@ export const PortfolioModal = ({ isOpen, onClose, imageSrc, imageAlt }: Portfoli
             <X className="h-4 w-4" />
           </Button>
         </div>
+
+        {/* Navigation arrows */}
+        {currentIndex > 0 && (
+          <Button
+            variant="outline"
+            size="icon"
+            onClick={handlePrevious}
+            className="absolute left-4 top-1/2 -translate-y-1/2 z-50 bg-background/90 backdrop-blur-sm border-border hover:bg-surface"
+          >
+            <ChevronLeft className="h-6 w-6" />
+          </Button>
+        )}
+        {currentIndex < images.length - 1 && (
+          <Button
+            variant="outline"
+            size="icon"
+            onClick={handleNext}
+            className="absolute right-4 top-1/2 -translate-y-1/2 z-50 bg-background/90 backdrop-blur-sm border-border hover:bg-surface"
+          >
+            <ChevronRight className="h-6 w-6" />
+          </Button>
+        )}
 
         {/* Image container with scroll */}
         <div className="w-full h-[90vh] overflow-auto p-8">

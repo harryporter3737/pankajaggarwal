@@ -25,10 +25,26 @@ const projects = [
 export default function Portfolio() {
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState({ src: "", alt: "" });
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Create array of all images for the project
+  const projectImages = [
+    { src: portfolioDesktop, alt: "Costume Designer Portfolio - Desktop View" },
+    { src: portfolioMobile1, alt: "Costume Designer Portfolio - Mobile View 1" },
+    { src: portfolioMobile2, alt: "Costume Designer Portfolio - Mobile View 2" },
+    { src: portfolioMobile3, alt: "Costume Designer Portfolio - Mobile View 3" },
+  ];
 
   const openModal = (src: string, alt: string) => {
+    const index = projectImages.findIndex(img => img.src === src);
+    setCurrentImageIndex(index !== -1 ? index : 0);
     setSelectedImage({ src, alt });
     setModalOpen(true);
+  };
+
+  const handleNavigate = (index: number) => {
+    setCurrentImageIndex(index);
+    setSelectedImage(projectImages[index]);
   };
 
   return (
@@ -173,6 +189,9 @@ export default function Portfolio() {
           onClose={() => setModalOpen(false)}
           imageSrc={selectedImage.src}
           imageAlt={selectedImage.alt}
+          images={projectImages}
+          currentIndex={currentImageIndex}
+          onNavigate={handleNavigate}
         />
       </div>
     </div>
