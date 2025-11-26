@@ -20,7 +20,7 @@ export default function Home() {
             className="w-full h-full object-cover"
             loading="eager"
           />
-          <div className="absolute inset-0 bg-background/60 dark:bg-background/80" />
+          <div className="absolute inset-0 bg-white/60 dark:bg-black/80" />
         </div>
         <div className="relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -227,7 +227,7 @@ export default function Home() {
             className="w-full h-full object-cover"
             loading="lazy"
           />
-          <div className="absolute inset-0 bg-surface/70" />
+          <div className="absolute inset-0 bg-white/70 dark:bg-black/80" />
         </div>
         <div className="relative z-10 container mx-auto px-6">
           <Card className="p-12 lg:p-16 bg-gradient-to-br from-accent/10 to-accent-2/10 border border-border text-center animate-fade-up">

@@ -46,7 +46,7 @@ export default function Process() {
           className="w-full h-full object-cover"
           loading="lazy"
         />
-        <div className="absolute inset-0 bg-background/90" />
+        <div className="absolute inset-0 bg-white/90 dark:bg-black/95" />
       </div>
       <div className="relative z-10 container mx-auto px-6">
         {/* Header */}
