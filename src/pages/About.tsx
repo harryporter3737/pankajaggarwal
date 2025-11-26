@@ -1,11 +1,24 @@
 import { Code, Zap, Target, Shield } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import profileImage from "@/assets/pankaj-profile-new.jpg";
+import teamBg from "@/assets/bg-process-team.jpg";
 
 export default function About() {
   return (
-    <div className="min-h-screen py-20">
-      <div className="container mx-auto px-6">
+    <div className="relative min-h-screen py-20 overflow-hidden">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0 z-0 opacity-5">
+        <img 
+          src={teamBg} 
+          alt="" 
+          className="w-full h-full object-cover"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-background/90" />
+      </div>
+      <div className="relative z-10 container mx-auto px-6">
         {/* Hero Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
           {/* Left - Text */}

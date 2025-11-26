@@ -13,6 +13,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
+import heroGradient from "@/assets/bg-hero-gradient.jpg";
 
 export default function Contact() {
   const { toast } = useToast();
@@ -51,8 +52,18 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen py-20">
-      <div className="container mx-auto px-6">
+    <div className="relative min-h-screen py-20 overflow-hidden">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0 z-0 opacity-15">
+        <img 
+          src={heroGradient} 
+          alt="" 
+          className="w-full h-full object-cover"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-background/85 dark:bg-background/90" />
+      </div>
+      <div className="relative z-10 container mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-up">
           <h1 className="font-sora font-bold text-text mb-6">

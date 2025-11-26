@@ -1,5 +1,6 @@
 import { MessageSquare, FileText, Palette, Code, Rocket, HeadphonesIcon } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import teamBg from "@/assets/bg-process-team.jpg";
 
 const steps = [
   {
@@ -36,8 +37,18 @@ const steps = [
 
 export default function Process() {
   return (
-    <div className="min-h-screen py-20">
-      <div className="container mx-auto px-6">
+    <div className="relative min-h-screen py-20 overflow-hidden">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0 z-0 opacity-5">
+        <img 
+          src={teamBg} 
+          alt="" 
+          className="w-full h-full object-cover"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-background/90" />
+      </div>
+      <div className="relative z-10 container mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-up">
           <h1 className="font-sora font-bold text-text mb-4">How we work together</h1>
