@@ -53,7 +53,7 @@ export default function About() {
                   loading="eager"
                 />
               </div>
-              <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 bg-surface border border-border px-6 py-3 rounded-lg shadow-card">
+              <div className="mt-6 bg-surface border border-border px-6 py-3 rounded-lg shadow-card text-center">
                 <p className="font-sora font-semibold text-text">Pankaj Aggarwal</p>
                 <p className="text-muted text-sm">Founder & Developer</p>
               </div>
