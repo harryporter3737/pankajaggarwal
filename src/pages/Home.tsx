@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative container mx-auto px-6 py-20 lg:py-24 overflow-hidden">
+      <section className="relative container mx-auto px-4 sm:px-6 py-12 sm:py-16 lg:py-24 overflow-hidden">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0 opacity-20">
           <img 
@@ -23,19 +23,19 @@ export default function Home() {
           <div className="absolute inset-0 bg-white/60 dark:bg-black/80" />
         </div>
         <div className="relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
           {/* Left - Copy */}
           <div className="animate-fade-up">
             <h1 className="font-sora font-bold text-text mb-6 leading-tight">
               Hi, I'm Pankaj Aggarwal.
             </h1>
-            <p className="text-xl font-semibold text-text mb-4 leading-snug">
+            <p className="text-base sm:text-lg md:text-xl font-semibold text-text mb-3 sm:mb-4 leading-snug">
               I design and develop websites that are fast, responsive, and built to help your business grow — without the fluff.
             </p>
-            <p className="text-muted mb-8 text-base leading-relaxed">
+            <p className="text-muted mb-6 sm:mb-8 text-sm sm:text-base leading-relaxed">
               Whether you're starting out or scaling up, your website should help you move forward — not just exist online.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Link to="/contact">
                 <Button
                   size="lg"
@@ -60,7 +60,7 @@ export default function Home() {
           {/* Right - Profile Image */}
           <div className="animate-fade-up flex justify-center lg:justify-end" style={{ animationDelay: "150ms" }}>
             <div className="relative">
-              <div className="w-64 h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-border shadow-card bg-gradient-to-br from-accent/5 to-accent-2/5">
+              <div className="w-56 h-56 sm:w-64 sm:h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-border shadow-card bg-gradient-to-br from-accent/5 to-accent-2/5">
                 <img 
                   src={profileImage} 
                   alt="Pankaj Aggarwal - Web Developer" 
@@ -68,7 +68,7 @@ export default function Home() {
                   loading="eager"
                 />
               </div>
-              <div className="absolute -bottom-4 -right-4 bg-accent text-white px-4 py-2 rounded-lg shadow-card font-medium">
+              <div className="absolute -bottom-3 -right-3 sm:-bottom-4 sm:-right-4 bg-accent text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg shadow-card font-medium text-sm sm:text-base">
                 Let's build together
               </div>
             </div>
@@ -78,14 +78,14 @@ export default function Home() {
       </section>
 
       {/* About Preview */}
-      <section className="bg-surface py-20">
-        <div className="container mx-auto px-6">
+      <section className="bg-surface py-12 sm:py-16 md:py-20">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-4xl mx-auto text-center animate-fade-up">
             <h2 className="font-sora font-bold text-text mb-6">About me</h2>
-            <p className="text-text mb-4 text-lg max-w-2xl mx-auto font-medium">
+            <p className="text-text mb-3 sm:mb-4 text-base sm:text-lg max-w-2xl mx-auto font-medium px-4">
               I'm Pankaj Aggarwal, a Software Engineer turned Web Developer and founder of Pankaj Aggarwal Pvt. Ltd.
             </p>
-            <p className="text-muted mb-8 text-base max-w-2xl mx-auto leading-relaxed">
+            <p className="text-muted mb-6 sm:mb-8 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed px-4">
               I build websites using engineering logic and modern UI design. My focus: clarity, performance, responsiveness, and long-term maintainability.
             </p>
             <Link to="/about">
@@ -102,7 +102,7 @@ export default function Home() {
       </section>
 
       {/* Services Overview */}
-      <section className="container mx-auto px-6 py-20">
+      <section className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20">
         <div className="text-center mb-12 animate-fade-up">
           <h2 className="font-sora font-bold text-text mb-4">What I do</h2>
           <p className="text-muted max-w-2xl mx-auto text-base leading-relaxed">
@@ -110,39 +110,39 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-12">
-          <Card className="p-8 bg-surface border border-border shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1 animate-fade-up">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto mb-8 sm:mb-12">
+          <Card className="p-6 sm:p-8 bg-surface border border-border shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1 animate-fade-up">
             <div className="mb-4">
               <div className="inline-flex p-3 bg-accent/10 rounded-lg">
                 <Code className="h-7 w-7 text-accent" />
               </div>
             </div>
-            <h3 className="font-sora font-semibold text-xl mb-3 text-text">Development</h3>
-            <p className="text-muted text-sm leading-relaxed">
+            <h3 className="font-sora font-semibold text-lg sm:text-xl mb-2 sm:mb-3 text-text">Development</h3>
+            <p className="text-muted text-xs sm:text-sm leading-relaxed">
               Custom websites built with modern tech, optimized for performance and conversion
             </p>
           </Card>
 
-          <Card className="p-8 bg-surface border border-border shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1 animate-fade-up" style={{ animationDelay: "100ms" }}>
+          <Card className="p-6 sm:p-8 bg-surface border border-border shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1 animate-fade-up" style={{ animationDelay: "100ms" }}>
             <div className="mb-4">
               <div className="inline-flex p-3 bg-accent-2/10 rounded-lg">
                 <Zap className="h-7 w-7 text-accent-2" />
               </div>
             </div>
-            <h3 className="font-sora font-semibold text-xl mb-3 text-text">Performance</h3>
-            <p className="text-muted text-sm leading-relaxed">
+            <h3 className="font-sora font-semibold text-lg sm:text-xl mb-2 sm:mb-3 text-text">Performance</h3>
+            <p className="text-muted text-xs sm:text-sm leading-relaxed">
               Speed optimization, security, and technical SEO to help your business grow
             </p>
           </Card>
 
-          <Card className="p-8 bg-surface border border-border shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1 animate-fade-up" style={{ animationDelay: "200ms" }}>
+          <Card className="p-6 sm:p-8 bg-surface border border-border shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1 animate-fade-up" style={{ animationDelay: "200ms" }}>
             <div className="mb-4">
               <div className="inline-flex p-3 bg-accent/10 rounded-lg">
                 <Search className="h-7 w-7 text-accent" />
               </div>
             </div>
-            <h3 className="font-sora font-semibold text-xl mb-3 text-text">Digital Presence</h3>
-            <p className="text-muted text-sm leading-relaxed">
+            <h3 className="font-sora font-semibold text-lg sm:text-xl mb-2 sm:mb-3 text-text">Digital Presence</h3>
+            <p className="text-muted text-xs sm:text-sm leading-relaxed">
               SEO, digital marketing support, and ongoing maintenance to keep your site performing
             </p>
           </Card>
@@ -161,9 +161,9 @@ export default function Home() {
       </section>
 
       {/* Featured Project */}
-      <section className="bg-surface py-20">
+      <section className="bg-surface py-12 sm:py-16 md:py-20">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center max-w-6xl mx-auto">
             <div className="order-2 lg:order-1 animate-fade-up">
               <Card className="p-4 bg-background border border-border shadow-card overflow-hidden">
                 <div className="rounded-lg overflow-hidden">
@@ -200,7 +200,7 @@ export default function Home() {
       </section>
 
       {/* Pricing Teaser */}
-      <section className="container mx-auto px-6 py-20">
+      <section className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20">
         <div className="max-w-4xl mx-auto text-center animate-fade-up">
           <h2 className="font-sora font-bold text-text mb-4">Transparent approach to pricing</h2>
           <p className="text-muted mb-8 text-base leading-relaxed max-w-2xl mx-auto">
@@ -218,7 +218,7 @@ export default function Home() {
       </section>
 
       {/* Final CTA */}
-      <section className="relative bg-surface py-20 overflow-hidden">
+      <section className="relative bg-surface py-12 sm:py-16 md:py-20 overflow-hidden">
         {/* Background Pattern with Overlay */}
         <div className="absolute inset-0 z-0 opacity-10">
           <img 
@@ -230,14 +230,14 @@ export default function Home() {
           <div className="absolute inset-0 bg-white/70 dark:bg-black/80" />
         </div>
         <div className="relative z-10 container mx-auto px-6">
-          <Card className="p-12 lg:p-16 bg-gradient-to-br from-accent/10 to-accent-2/10 border border-border text-center animate-fade-up">
+          <Card className="p-6 sm:p-8 md:p-12 lg:p-16 bg-gradient-to-br from-accent/10 to-accent-2/10 border border-border text-center animate-fade-up">
             <h2 className="font-sora font-bold text-text mb-6">
               Ready to build your online presence?
             </h2>
-            <p className="text-muted mb-10 max-w-2xl mx-auto text-base leading-relaxed">
+            <p className="text-muted mb-6 sm:mb-8 md:mb-10 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed px-4">
               Let's discuss your project and create something that helps your business grow.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <a
                 href="https://wa.me/917206543706?text=Hi%20Pankaj,%20I'd%20like%20to%20discuss%20a%20website%20project."
                 target="_blank"

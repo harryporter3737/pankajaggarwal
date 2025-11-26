@@ -58,7 +58,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="relative min-h-screen py-20 overflow-hidden">
+    <div className="relative min-h-screen py-12 sm:py-16 md:py-20 overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0 opacity-15">
         <img 
@@ -69,105 +69,105 @@ export default function Contact() {
         />
         <div className="absolute inset-0 bg-white/85 dark:bg-black/90" />
       </div>
-      <div className="relative z-10 container mx-auto px-6">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6">
         {/* Header */}
-        <div className="text-center mb-16 animate-fade-up">
-          <h1 className="font-sora font-bold text-text mb-6">
+        <div className="text-center mb-8 sm:mb-12 md:mb-16 animate-fade-up">
+          <h1 className="font-sora font-bold text-text mb-4 sm:mb-6 px-2">
             Let's build something that works for your business
           </h1>
-          <p className="text-muted max-w-2xl mx-auto text-base leading-relaxed">
+          <p className="text-muted max-w-2xl mx-auto text-sm sm:text-base leading-relaxed px-2">
             Fill out the form below or reach out directly via WhatsApp or email. I respond quickly and we can discuss your project in detail.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12 max-w-6xl mx-auto">
           {/* Form */}
-          <Card className="p-8 bg-surface border border-border shadow-card animate-fade-up">
-            <h2 className="font-sora font-semibold text-xl mb-6">Send a message</h2>
+          <Card className="p-4 sm:p-6 md:p-8 bg-surface border border-border shadow-card animate-fade-up">
+            <h2 className="font-sora font-semibold text-lg sm:text-xl mb-4 sm:mb-6">Send a message</h2>
             <form
               action="https://formspree.io/f/xblevgwa"
               method="POST"
               onSubmit={handleSubmit}
-              className="space-y-4"
+              className="space-y-3 sm:space-y-4"
             >
               <div>
-                <Label htmlFor="name" className="text-foreground">Name *</Label>
+                <Label htmlFor="name" className="text-foreground text-sm">Name *</Label>
                 <Input
                   id="name"
                   name="name"
                   type="text"
                   required
-                  className="mt-2"
+                  className="mt-1.5 w-full"
                   placeholder="Your full name"
                 />
               </div>
 
               <div>
-                <Label htmlFor="business" className="text-foreground">Business / Organization *</Label>
+                <Label htmlFor="business" className="text-foreground text-sm">Business / Organization *</Label>
                 <Input
                   id="business"
                   name="business"
                   type="text"
                   required
-                  className="mt-2"
+                  className="mt-1.5 w-full"
                   placeholder="Your business name"
                 />
               </div>
 
               <div>
-                <Label htmlFor="website" className="text-foreground">Current Website (Optional)</Label>
+                <Label htmlFor="website" className="text-foreground text-sm">Current Website (Optional)</Label>
                 <Input
                   id="website"
                   name="website"
                   type="url"
-                  className="mt-2"
+                  className="mt-1.5 w-full"
                   placeholder="https://example.com"
                 />
               </div>
 
               <div>
-                <Label htmlFor="email" className="text-foreground">Email Address *</Label>
+                <Label htmlFor="email" className="text-foreground text-sm">Email Address *</Label>
                 <Input
                   id="email"
                   name="email"
                   type="email"
                   required
-                  className="mt-2"
+                  className="mt-1.5 w-full"
                   placeholder="contact@yourbrand.com"
                 />
               </div>
 
               <div>
-                <Label htmlFor="phone" className="text-foreground">Phone Number *</Label>
+                <Label htmlFor="phone" className="text-foreground text-sm">Phone Number *</Label>
                 <Input
                   id="phone"
                   name="phone"
                   type="tel"
                   required
-                  className="mt-2"
+                  className="mt-1.5 w-full"
                   placeholder="+91 98765 43210"
                 />
               </div>
 
               <div>
-                <Label htmlFor="requirement" className="text-foreground">Brief Requirement *</Label>
+                <Label htmlFor="requirement" className="text-foreground text-sm">Brief Requirement *</Label>
                 <Textarea
                   id="requirement"
                   name="requirement"
                   required
-                  className="mt-2 min-h-[120px]"
+                  className="mt-1.5 min-h-[100px] sm:min-h-[120px] w-full resize-y"
                   placeholder="Tell me about your project..."
                 />
               </div>
 
               <div>
-                <Label htmlFor="budget" className="text-foreground">Budget Bracket (Optional)</Label>
+                <Label htmlFor="budget" className="text-foreground text-sm">Budget Bracket (Optional)</Label>
                 <select
                   id="budget"
                   name="budget"
                   value={selectedPackage}
                   onChange={(e) => setSelectedPackage(e.target.value)}
-                  className="mt-2 w-full p-2 border rounded-md bg-background text-foreground border-border focus:outline-none focus:ring-2 focus:ring-ring"
+                  className="mt-1.5 w-full p-2.5 text-sm border rounded-md bg-background text-foreground border-border focus:outline-none focus:ring-2 focus:ring-ring"
                 >
                   <option value="">Select your budget range</option>
                   <option value="Basic package">Basic package</option>
@@ -180,7 +180,7 @@ export default function Contact() {
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-accent hover:bg-accent/90 text-white font-semibold transition-all duration-200 hover:-translate-y-1 shadow-card hover:shadow-card-hover"
+                className="w-full mt-2 bg-accent hover:bg-accent/90 text-white font-semibold transition-all duration-200 hover:-translate-y-1 shadow-card hover:shadow-card-hover text-sm sm:text-base py-2.5 sm:py-3"
               >
                 {isSubmitting ? "Sending..." : "Send message"}
               </Button>
@@ -188,26 +188,28 @@ export default function Contact() {
           </Card>
 
           {/* Contact Options */}
-          <div className="space-y-6 animate-fade-up" style={{ animationDelay: "150ms" }}>
-            <Card className="p-6 bg-surface border border-border shadow-card hover:shadow-card-hover transition-all duration-300">
-              <div className="flex items-start gap-4">
-                <div className="p-3 bg-accent/10 rounded-lg">
-                  <MessageCircle className="h-6 w-6 text-accent" />
+          <div className="space-y-4 sm:space-y-6 animate-fade-up" style={{ animationDelay: "150ms" }}>
+            <Card className="p-4 sm:p-6 bg-surface border border-border shadow-card hover:shadow-card-hover transition-all duration-300">
+              <div className="flex items-start gap-3 sm:gap-4">
+                <div className="p-2 sm:p-3 bg-accent/10 rounded-lg flex-shrink-0">
+                  <MessageCircle className="h-5 w-5 sm:h-6 sm:w-6 text-accent" />
                 </div>
-                <div className="flex-1">
-                  <h3 className="font-sora font-semibold mb-2">WhatsApp (Preferred)</h3>
-                  <p className="text-muted text-sm mb-2">+91 7206543706</p>
-                  <p className="text-muted text-sm mb-4">
+                <div className="flex-1 min-w-0">
+                  <h3 className="font-sora font-semibold mb-2 text-base sm:text-lg">WhatsApp (Preferred)</h3>
+                  <p className="text-muted text-xs sm:text-sm mb-2">+91 7206543706</p>
+                  <p className="text-muted text-xs sm:text-sm mb-3 sm:mb-4">
                     Quick responses and easy communication. Best for initial discussions and ongoing project updates.
                   </p>
                   <a
                     href="https://wa.me/917206543706?text=Hi%20Pankaj,%20I'd%20like%20to%20discuss%20a%20website%20project."
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="block"
                   >
                     <Button
                       variant="outline"
-                      className="border-border hover:border-accent hover:text-accent transition-all duration-200"
+                      size="sm"
+                      className="border-border hover:border-accent hover:text-accent transition-all duration-200 w-full sm:w-auto text-xs sm:text-sm"
                     >
                       Chat on WhatsApp
                     </Button>
@@ -216,21 +218,22 @@ export default function Contact() {
               </div>
             </Card>
 
-            <Card className="p-6 bg-surface border border-border shadow-card hover:shadow-card-hover transition-all duration-300">
-              <div className="flex items-start gap-4">
-                <div className="p-3 bg-accent-2/10 rounded-lg">
-                  <Mail className="h-6 w-6 text-accent-2" />
+            <Card className="p-4 sm:p-6 bg-surface border border-border shadow-card hover:shadow-card-hover transition-all duration-300">
+              <div className="flex items-start gap-3 sm:gap-4">
+                <div className="p-2 sm:p-3 bg-accent-2/10 rounded-lg flex-shrink-0">
+                  <Mail className="h-5 w-5 sm:h-6 sm:w-6 text-accent-2" />
                 </div>
-                <div className="flex-1">
-                  <h3 className="font-sora font-semibold mb-2">Email</h3>
-                  <p className="text-muted text-sm mb-2">pankajaggarwalbusiness@gmail.com</p>
-                  <p className="text-muted text-sm mb-4">
+                <div className="flex-1 min-w-0">
+                  <h3 className="font-sora font-semibold mb-2 text-base sm:text-lg">Email</h3>
+                  <p className="text-muted text-xs sm:text-sm mb-2 break-all">pankajaggarwalbusiness@gmail.com</p>
+                  <p className="text-muted text-xs sm:text-sm mb-3 sm:mb-4">
                     For detailed project briefs and formal communication. I respond within 24 hours.
                   </p>
-                  <a href="mailto:pankajaggarwalbusiness@gmail.com">
+                  <a href="mailto:pankajaggarwalbusiness@gmail.com" className="block">
                     <Button
                       variant="outline"
-                      className="border-border hover:border-accent hover:text-accent transition-all duration-200"
+                      size="sm"
+                      className="border-border hover:border-accent hover:text-accent transition-all duration-200 w-full sm:w-auto text-xs sm:text-sm"
                     >
                       Send email
                     </Button>
@@ -240,9 +243,9 @@ export default function Contact() {
             </Card>
 
             {/* Payment Info */}
-            <Card className="p-8 bg-gradient-to-br from-accent/10 to-accent-2/10 border border-border">
-              <h3 className="font-sora font-semibold mb-4 text-text text-lg">Payment Terms</h3>
-              <ul className="space-y-3 text-sm text-muted leading-relaxed">
+            <Card className="p-4 sm:p-6 md:p-8 bg-gradient-to-br from-accent/10 to-accent-2/10 border border-border">
+              <h3 className="font-sora font-semibold mb-3 sm:mb-4 text-text text-base sm:text-lg">Payment Terms</h3>
+              <ul className="space-y-2 sm:space-y-3 text-xs sm:text-sm text-muted leading-relaxed">
                 <li className="flex items-start gap-3">
                   <span className="text-accent mt-0.5 font-bold">•</span>
                   <span>Payments via UPI / Bank Transfer after scope agreement</span>

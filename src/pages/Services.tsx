@@ -83,7 +83,7 @@ export default function Services() {
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16 max-w-7xl mx-auto">
           {services.map((service, idx) => (
             <Card
               key={idx}
@@ -91,7 +91,7 @@ export default function Services() {
               style={{ animationDelay: `${idx * 50}ms` }}
             >
               {/* Service Image */}
-              <div className="h-48 overflow-hidden bg-surface">
+              <div className="h-40 sm:h-48 overflow-hidden bg-surface">
                 <img 
                   src={service.image} 
                   alt={`${service.title} illustration`}
@@ -101,14 +101,14 @@ export default function Services() {
               </div>
               
               {/* Content */}
-              <div className="p-6">
+              <div className="p-4 sm:p-6">
                 <div className="mb-4">
                   <div className="inline-flex p-3 bg-accent/10 rounded-lg">
                     <service.icon className="h-6 w-6 text-accent" />
                   </div>
                 </div>
-                <h3 className="font-sora font-semibold text-xl mb-3 text-text">{service.title}</h3>
-                <p className="text-muted text-sm mb-6 leading-relaxed">{service.description}</p>
+                <h3 className="font-sora font-semibold text-base sm:text-lg md:text-xl mb-2 sm:mb-3 text-text">{service.title}</h3>
+                <p className="text-muted text-xs sm:text-sm mb-4 sm:mb-6 leading-relaxed">{service.description}</p>
                 <Link to="/contact">
                   <Button
                     variant="ghost"
