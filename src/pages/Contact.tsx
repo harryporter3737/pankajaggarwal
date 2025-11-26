@@ -95,11 +95,12 @@ export default function Contact() {
               </div>
 
               <div>
-                <Label htmlFor="phone">Phone Number (Optional)</Label>
+                <Label htmlFor="phone">Phone Number *</Label>
                 <Input
                   id="phone"
                   name="phone"
                   type="tel"
+                  required
                   className="mt-2"
                   placeholder="+91 98765 43210"
                 />
