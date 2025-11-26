@@ -76,7 +76,7 @@ export default function Contact() {
             Let's build something that works for your business
           </h1>
           <p className="text-muted max-w-2xl mx-auto text-sm sm:text-base leading-relaxed px-2">
-            Fill out the form below or reach out directly via WhatsApp or email. I respond quickly and we can discuss your project in detail.
+            Fill out the form below or reach out directly via WhatsApp or email. We respond quickly and can discuss your project in detail.
           </p>
         </div>
 
@@ -201,7 +201,7 @@ export default function Contact() {
                     Quick responses and easy communication. Best for initial discussions and ongoing project updates.
                   </p>
                   <a
-                    href="https://wa.me/917206543706?text=Hi%20Pankaj,%20I'd%20like%20to%20discuss%20a%20website%20project."
+                    href="https://wa.me/917206543706?text=Hi%20NetFlux%20Studios,%20I'd%20like%20to%20discuss%20a%20website%20project."
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block"
@@ -227,7 +227,7 @@ export default function Contact() {
                   <h3 className="font-sora font-semibold mb-2 text-base sm:text-lg">Email</h3>
                   <p className="text-muted text-xs sm:text-sm mb-2 break-all">pankajaggarwalbusiness@gmail.com</p>
                   <p className="text-muted text-xs sm:text-sm mb-3 sm:mb-4">
-                    For detailed project briefs and formal communication. I respond within 24 hours.
+                    For detailed project briefs and formal communication. We respond within 24 hours.
                   </p>
                   <a href="mailto:pankajaggarwalbusiness@gmail.com" className="block">
                     <Button
