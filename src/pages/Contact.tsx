@@ -118,9 +118,9 @@ export default function Contact() {
                   className="mt-2 w-full p-2 border rounded-md bg-background text-foreground border-border focus:outline-none focus:ring-2 focus:ring-ring"
                 >
                   <option value="">Select your budget range</option>
-                  <option value="Small">Small</option>
-                  <option value="Medium">Medium</option>
-                  <option value="Premium">Premium</option>
+                  <option value="Basic package">Basic package</option>
+                  <option value="Premium package">Premium package</option>
+                  <option value="Custom package">Custom package</option>
                   <option value="Flexible">Flexible</option>
                 </select>
               </div>
