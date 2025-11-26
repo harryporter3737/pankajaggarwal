@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import portfolioDesktop from "@/assets/jayesh-portfolio-desktop.png";
 import { PortfolioModal } from "@/components/PortfolioModal";
+import textureLight from "@/assets/bg-texture-light.jpg";
 
 const projects = [
   {
@@ -119,7 +120,17 @@ export default function Portfolio() {
         </div>
 
         {/* CTA */}
-        <Card className="p-12 bg-gradient-to-br from-accent/10 to-accent-2/10 border border-border text-center mt-20">
+        <Card className="relative p-12 bg-gradient-to-br from-accent/10 to-accent-2/10 border border-border text-center mt-20 overflow-hidden">
+          {/* Background Texture */}
+          <div className="absolute inset-0 z-0 opacity-5">
+            <img 
+              src={textureLight} 
+              alt="" 
+              className="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+          <div className="relative z-10">
           <h2 className="font-sora font-bold text-text mb-4">
             Want to see your project here?
           </h2>
@@ -133,6 +144,7 @@ export default function Portfolio() {
           >
             Start your project
           </Button>
+          </div>
         </Card>
 
         {/* Portfolio Modal */}

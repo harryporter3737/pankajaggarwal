@@ -7,6 +7,7 @@ import seoImage from "@/assets/seo-illustration.jpg";
 import digitalMarketingImage from "@/assets/digital-marketing.png";
 import performanceImage from "@/assets/performance-analytics.webp";
 import marketingTeamImage from "@/assets/marketing-team.jpg";
+import techBrain from "@/assets/bg-tech-brain.jpg";
 
 const services = [
   {
@@ -61,8 +62,18 @@ const services = [
 
 export default function Services() {
   return (
-    <div className="min-h-screen py-20">
-      <div className="container mx-auto px-6">
+    <div className="relative min-h-screen py-20 overflow-hidden">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0 z-0 opacity-5">
+        <img 
+          src={techBrain} 
+          alt="" 
+          className="w-full h-full object-cover"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-background/90" />
+      </div>
+      <div className="relative z-10 container mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-up">
           <h1 className="font-sora font-bold text-text mb-4">Services I provide</h1>

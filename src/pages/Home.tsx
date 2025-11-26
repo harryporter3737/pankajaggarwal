@@ -4,12 +4,25 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import portfolioDesktop from "@/assets/jayesh-portfolio-desktop.png";
 import profileImage from "@/assets/pankaj-profile-new.jpg";
+import heroGradient from "@/assets/bg-hero-gradient.jpg";
+import patternAbstract from "@/assets/bg-pattern-abstract.jpg";
 
 export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="container mx-auto px-6 py-20 lg:py-24">
+      <section className="relative container mx-auto px-6 py-20 lg:py-24 overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0 opacity-20">
+          <img 
+            src={heroGradient} 
+            alt="" 
+            className="w-full h-full object-cover"
+            loading="eager"
+          />
+          <div className="absolute inset-0 bg-background/60 dark:bg-background/80" />
+        </div>
+        <div className="relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left - Copy */}
           <div className="animate-fade-up">
@@ -60,6 +73,7 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </div>
         </div>
       </section>
 
@@ -204,8 +218,18 @@ export default function Home() {
       </section>
 
       {/* Final CTA */}
-      <section className="bg-surface py-20">
-        <div className="container mx-auto px-6">
+      <section className="relative bg-surface py-20 overflow-hidden">
+        {/* Background Pattern with Overlay */}
+        <div className="absolute inset-0 z-0 opacity-10">
+          <img 
+            src={patternAbstract} 
+            alt="" 
+            className="w-full h-full object-cover"
+            loading="lazy"
+          />
+          <div className="absolute inset-0 bg-surface/70" />
+        </div>
+        <div className="relative z-10 container mx-auto px-6">
           <Card className="p-12 lg:p-16 bg-gradient-to-br from-accent/10 to-accent-2/10 border border-border text-center animate-fade-up">
             <h2 className="font-sora font-bold text-text mb-6">
               Ready to build your online presence?
