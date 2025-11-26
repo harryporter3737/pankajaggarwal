@@ -3,6 +3,9 @@ import { ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import portfolioDesktop from "@/assets/jayesh-portfolio-desktop.png";
+import portfolioMobile1 from "@/assets/jayesh-mobile-1.jpg";
+import portfolioMobile2 from "@/assets/jayesh-mobile-2.jpg";
+import portfolioMobile3 from "@/assets/jayesh-mobile-3.jpg";
 import { PortfolioModal } from "@/components/PortfolioModal";
 
 const projects = [
@@ -62,15 +65,44 @@ export default function Portfolio() {
                     />
                   </div>
                 </Card>
-                <div className="grid grid-cols-2 gap-4">
-                  <Card className="p-3 bg-surface border border-border shadow-card">
-                    <div className="aspect-[9/16] bg-gradient-to-br from-accent/20 to-accent-2/20 rounded flex items-center justify-center">
-                      <p className="text-muted text-xs">Mobile View</p>
+                <div className="grid grid-cols-3 gap-4">
+                  <Card 
+                    className="p-3 bg-surface border border-border shadow-card cursor-pointer hover:shadow-card-hover transition-all duration-300"
+                    onClick={() => openModal(portfolioMobile1, `${project.title} - Mobile View 1`)}
+                  >
+                    <div className="aspect-[9/16] rounded overflow-hidden">
+                      <img 
+                        src={portfolioMobile1} 
+                        alt={`${project.title} - Mobile View 1`}
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                        loading="lazy"
+                      />
                     </div>
                   </Card>
-                  <Card className="p-3 bg-surface border border-border shadow-card">
-                    <div className="aspect-[9/16] bg-gradient-to-br from-accent-2/20 to-accent/20 rounded flex items-center justify-center">
-                      <p className="text-muted text-xs">UI Detail</p>
+                  <Card 
+                    className="p-3 bg-surface border border-border shadow-card cursor-pointer hover:shadow-card-hover transition-all duration-300"
+                    onClick={() => openModal(portfolioMobile2, `${project.title} - Mobile View 2`)}
+                  >
+                    <div className="aspect-[9/16] rounded overflow-hidden">
+                      <img 
+                        src={portfolioMobile2} 
+                        alt={`${project.title} - Mobile View 2`}
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                        loading="lazy"
+                      />
+                    </div>
+                  </Card>
+                  <Card 
+                    className="p-3 bg-surface border border-border shadow-card cursor-pointer hover:shadow-card-hover transition-all duration-300"
+                    onClick={() => openModal(portfolioMobile3, `${project.title} - Mobile View 3`)}
+                  >
+                    <div className="aspect-[9/16] rounded overflow-hidden">
+                      <img 
+                        src={portfolioMobile3} 
+                        alt={`${project.title} - Mobile View 3`}
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                        loading="lazy"
+                      />
                     </div>
                   </Card>
                 </div>
