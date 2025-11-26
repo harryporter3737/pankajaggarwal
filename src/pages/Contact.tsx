@@ -5,11 +5,21 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/hooks/use-toast";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import heroGradient from "@/assets/bg-hero-gradient.jpg";
 
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [searchParams] = useSearchParams();
+  const [selectedPackage, setSelectedPackage] = useState("");
+
+  useEffect(() => {
+    const packageParam = searchParams.get("package");
+    if (packageParam) {
+      setSelectedPackage(packageParam);
+    }
+  }, [searchParams]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -155,6 +165,8 @@ export default function Contact() {
                 <select
                   id="budget"
                   name="budget"
+                  value={selectedPackage}
+                  onChange={(e) => setSelectedPackage(e.target.value)}
                   className="mt-2 w-full p-2 border rounded-md bg-background text-foreground border-border focus:outline-none focus:ring-2 focus:ring-ring"
                 >
                   <option value="">Select your budget range</option>

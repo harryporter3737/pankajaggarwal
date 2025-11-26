@@ -22,6 +22,7 @@ const pricingPlans = [
       "1 revision round",
     ],
     cta: "Discuss Basic",
+    packageValue: "Basic package",
   },
   {
     name: "Premium Website Package",
@@ -37,6 +38,7 @@ const pricingPlans = [
       "Enhanced SEO",
     ],
     cta: "Discuss Premium",
+    packageValue: "Premium package",
   },
   {
     name: "Custom Brand Package",
@@ -51,6 +53,7 @@ const pricingPlans = [
       "Priority support",
     ],
     cta: "Discuss Custom",
+    packageValue: "Custom package",
   },
 ];
 
@@ -136,7 +139,7 @@ export default function Pricing() {
                 ))}
               </ul>
 
-              <Link to="/contact" className="block">
+              <Link to={`/contact?package=${encodeURIComponent(plan.packageValue)}`} className="block">
                 <Button
                   className={`w-full transition-all duration-200 hover:-translate-y-1 ${
                     plan.popular
