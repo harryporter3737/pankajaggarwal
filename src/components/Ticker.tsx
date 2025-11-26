@@ -1,5 +1,5 @@
 export default function Ticker() {
-  const tickerText = "pankajaggarwalbusiness  •  Web Development & Digital Transformation  •  SEO for Real Leads  •  Branding & Logo Design  •  Social Media Marketing  •  Fast & Secure Website Hosting  •  Full Digital Setup for Businesses  •  Book Free Consultation  •  Transforming Ideas into Revenue →";
+  const tickerText = "pankajaggarwalbusiness   •   Web Development & Digital Transformation   •   SEO for Real Leads   •   Branding & Logo Design   •   Social Media Marketing   •   Fast & Secure Website Hosting   •   Full Digital Setup for Businesses   •   Book Free Consultation   •   Transforming Ideas into Revenue →";
   
   // Duplicate text for seamless loop
   const duplicatedText = `${tickerText} ${tickerText} ${tickerText}`;
@@ -29,7 +29,7 @@ export default function Ticker() {
 
         .ticker-content {
           display: flex;
-          animation: ticker-scroll 15s linear infinite;
+          animation: ticker-scroll 12s linear infinite;
         }
 
         .ticker-text {
