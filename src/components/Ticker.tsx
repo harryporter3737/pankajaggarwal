@@ -2,7 +2,7 @@ export default function Ticker() {
   const tickerText = "pankajaggarwalbusiness   •   Web Development & Digital Transformation   •   SEO for Real Leads   •   Branding & Logo Design   •   Social Media Marketing   •   Fast & Secure Website Hosting   •   Full Digital Setup for Businesses   •   Book Free Consultation   •   Transforming Ideas into Revenue →";
   
   // Duplicate text for seamless loop
-  const duplicatedText = `${tickerText} ${tickerText} ${tickerText}`;
+  const duplicatedText = `${tickerText} ${tickerText}`;
 
   return (
     <div className="relative w-full overflow-hidden bg-surface py-4 border-y border-border">
@@ -23,13 +23,14 @@ export default function Ticker() {
             transform: translateX(0);
           }
           100% {
-            transform: translateX(-33.333%);
+            transform: translateX(-50%);
           }
         }
 
         .ticker-content {
           display: flex;
-          animation: ticker-scroll 12s linear infinite;
+          animation: ticker-scroll 24s linear infinite;
+          will-change: transform;
         }
 
         .ticker-text {
@@ -39,6 +40,12 @@ export default function Ticker() {
 
         .ticker-content:hover {
           animation-play-state: paused;
+        }
+
+        @media (max-width: 768px) {
+          .ticker-content {
+            animation-duration: 12s;
+          }
         }
 
         @media (prefers-reduced-motion: reduce) {
